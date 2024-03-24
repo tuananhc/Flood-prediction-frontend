@@ -11,6 +11,8 @@
   import Index from "./views/Index.svelte";
   import Landing from "./views/Landing.svelte";
   import Profile from "./views/Profile.svelte";
+  import News from "./views/News.svelte"
+  import Discussion from "./views/Discussion.svelte";
 
   export let url = "";
 </script>
@@ -23,5 +25,14 @@
   <!-- no layout pages -->
   <Route path="landing" component="{Landing}" />
   <Route path="profile" component="{Profile}" />
+  <Route path="news" component="{News}" />
+  <Route path="discussion" component="{Discussion}" />
   <Route path="/" component="{Index}" />
+  <!-- Home Page
+  news
+  Weather update + flood data
+  Discussion forum
+  About Page
+  Contact Page
+  Login -->
 </Router>

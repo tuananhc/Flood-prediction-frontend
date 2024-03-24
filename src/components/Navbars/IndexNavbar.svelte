@@ -25,7 +25,7 @@
         class="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
         href="/"
       >
-        Notus Svelte
+        Lmao Svelte
       </a>
       <button
         class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -57,22 +57,18 @@
         <li class="flex items-center">
           <a
             class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-svelte%2F%23%2F"
-            target="_blank"
+            href="/news"
           >
-            <i class="text-blueGray-400 fab fa-facebook text-lg leading-lg" />
-            <span class="lg:hidden inline-block ml-2">Share</span>
+            <span class="inline-block ml-2">News</span>
           </a>
         </li>
 
         <li class="flex items-center">
           <a
             class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdemos.creative-tim.com%2Fnotus-svelte%2F&text=Start%20your%20development%20with%20a%20Free%20Tailwind%20CSS%20and%20Svelte%20UI%20Kit%20and%20Admin.%20Let%20Notus%20Svelte%20amaze%20you%20with%20its%20cool%20features%20and%20build%20tools%20and%20get%20your%20project%20to%20a%20whole%20new%20level."
-            target="_blank"
+            href="/discussion"
           >
-            <i class="text-blueGray-400 fab fa-twitter text-lg leading-lg" />
-            <span class="lg:hidden inline-block ml-2">Tweet</span>
+            <span class="inline-block ml-2">Forum</span>
           </a>
         </li>
 
@@ -80,10 +76,8 @@
           <a
             class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
             href="https://github.com/creativetimofficial/notus-svelte?ref=ns-index-navbar"
-            target="_blank"
           >
-            <i class="text-blueGray-400 fab fa-github text-lg leading-lg" />
-            <span class="lg:hidden inline-block ml-2">Star</span>
+            <span class="inline-block ml-2">Data</span>
           </a>
         </li>
 

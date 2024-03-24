@@ -29,8 +29,7 @@
     bind:this="{btnDropdownRef}"
     on:click="{toggleDropdown}"
   >
-    Demo Pages
-  </a>
+    Test routing
   <div
     bind:this="{popoverDropdownRef}"
     class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 {dropdownPopoverShow ? 'block':'hidden'}"
