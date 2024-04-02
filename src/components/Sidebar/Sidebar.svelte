@@ -34,7 +34,7 @@
       class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
       href="/"
     >
-      Notus Svelte
+      FloodTech
     </a>
     <!-- User -->
     <ul class="md:hidden items-center flex flex-wrap list-none">
@@ -87,12 +87,13 @@
 
       <!-- Divider -->
       <hr class="my-4 md:min-w-full" />
-      <!-- Heading -->
+
+      <!-- Heading 
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        Admin Layout Pages
-      </h6>
+      </h6> -->
+
       <!-- Navigation -->
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none">
@@ -106,19 +107,6 @@
               class="fas fa-tv mr-2 text-sm {location.href.indexOf('/admin/dashboard') !== -1 ? 'opacity-75' : 'text-blueGray-300'}"
             ></i>
             Dashboard
-          </a>
-        </li>
-
-        <li class="items-center">
-          <a
-            use:link
-            href="/admin/settings"
-            class="text-xs uppercase py-3 font-bold block {location.href.indexOf('/admin/settings') !== -1 ? 'text-red-500 hover:text-red-600':'text-blueGray-700 hover:text-blueGray-500'}"
-          >
-            <i
-              class="fas fa-tools mr-2 text-sm {location.href.indexOf('/admin/settings') !== -1 ? 'opacity-75' : 'text-blueGray-300'}"
-            ></i>
-            Settings
           </a>
         </li>
 
@@ -151,12 +139,15 @@
 
       <!-- Divider -->
       <hr class="my-4 md:min-w-full" />
-      <!-- Heading -->
+
+      <!-- Heading 
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
         Auth Layout Pages
       </h6>
+      -->
+
       <!-- Navigation -->
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
@@ -185,12 +176,15 @@
 
       <!-- Divider -->
       <hr class="my-4 md:min-w-full" />
-      <!-- Heading -->
+
+      <!-- Heading
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
         No Layout Pages
       </h6>
+       -->
+
       <!-- Navigation -->
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
@@ -201,7 +195,20 @@
             href="/landing"
           >
             <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
-            Landing Page
+            About Us
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            use:link
+            href="/admin/settings"
+            class="text-xs uppercase py-3 font-bold block {location.href.indexOf('/admin/settings') !== -1 ? 'text-red-500 hover:text-red-600':'text-blueGray-700 hover:text-blueGray-500'}"
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm {location.href.indexOf('/admin/settings') !== -1 ? 'opacity-75' : 'text-blueGray-300'}"
+            ></i>
+            Settings
           </a>
         </li>
 
@@ -217,15 +224,15 @@
         </li>
       </ul>
 
-      <!-- Divider -->
+      <!-- Hidden Documentation 
+      
       <hr class="my-4 md:min-w-full" />
-      <!-- Heading -->
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
         Documentation
       </h6>
-      <!-- Navigation -->
+      
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
         <li class="inline-flex">
           <a
@@ -316,6 +323,7 @@
         </li>
 
       </ul>
+      -->
     </div>
   </div>
 </nav>
