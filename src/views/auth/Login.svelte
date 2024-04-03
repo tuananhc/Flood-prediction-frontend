@@ -13,6 +13,7 @@
       <div
         class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0"
       >
+        <!--
         <div class="rounded-t mb-0 px-6 py-6">
           <div class="text-center mb-3">
             <h6 class="text-blueGray-500 text-sm font-bold">
@@ -33,13 +34,23 @@
             >
               <img alt="..." class="w-5 mr-1" src="{google}" />
               Google
-            </button>
+            </button>    
           </div>
           <hr class="mt-6 border-b-1 border-blueGray-300" />
+        </div> 
+        -->
+        <div class="centered">
+          <a
+            use:link
+            class="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+            href="/"
+          >
+          Floodtech
+          </a>
         </div>
         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
           <div class="text-blueGray-400 text-center mb-3 font-bold">
-            <small>Or sign in with credentials</small>
+            <br><p>Secure Sign-in</p>
           </div>
           <form>
             <div class="relative w-full mb-3">
@@ -110,3 +121,4 @@
     </div>
   </div>
 </div>
+

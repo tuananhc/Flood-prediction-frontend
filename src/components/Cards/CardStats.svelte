@@ -43,7 +43,7 @@
         <i
           class="{statArrow === 'up' ? 'fas fa-arrow-up' : 'fas fa-arrow-down'}"
         ></i>
-        {statPercent}%
+        {statPercent}
       </span>
       <span class="whitespace-nowrap">{statDescripiron}</span>
     </p>

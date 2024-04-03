@@ -18,14 +18,14 @@
     class="container px-4 mx-auto flex flex-wrap items-center justify-between"
   >
     <div
-      class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
+      class="centered reddit"
     >
       <a
         use:link
         class="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
         href="/"
       >
-        Notus Svelte
+       Floodtech
       </a>
       <button
         class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -39,6 +39,7 @@
       class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none rounded shadow-lg {navbarOpen ? 'block':'hidden'}"
       id="example-navbar-warning"
     >
+      <!--
       <ul class="flex flex-col lg:flex-row list-none mr-auto">
         <li class="flex items-center">
           <a
@@ -52,6 +53,7 @@
           </a>
         </li>
       </ul>
+      
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
         <li class="flex items-center">
           <PagesDropdown />
@@ -104,6 +106,7 @@
           </button>
         </li>
       </ul>
+      -->
     </div>
   </div>
 </nav>
