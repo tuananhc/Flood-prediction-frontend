@@ -11,7 +11,7 @@
       <div class="flex flex-wrap">
         <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
           <CardStats
-            statSubtitle="TRAFFIC"
+            statSubtitle="TEMPERATURE"
             statTitle="350,897"
             statArrow="up"
             statPercent="3.48"
