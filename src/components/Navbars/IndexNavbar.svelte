@@ -12,7 +12,7 @@
 </script>
 
 <nav
-  class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow"
+  class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-violet-950 shadow"
 >
   <div
     class="container px-4 mx-auto flex flex-wrap items-center justify-between"
@@ -22,7 +22,7 @@
     >
       <a
         use:link
-        class="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+        class="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
         href="/"
       >
         FloodTech
@@ -39,54 +39,17 @@
       class="lg:flex flex-grow items-center {navbarOpen ? 'block':'hidden'}"
       id="example-navbar-warning"
     >
-      <ul class="flex flex-col lg:flex-row list-none mr-auto">
-        <li class="flex items-center">
-          <a
-            class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-            href="https://www.creative-tim.com/learning-lab/tailwind/svelte/overview/notus?ref=ns-index-navbar"
-          >
-            <i class="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2" />
-            Docs
-          </a>
-        </li>
-      </ul>
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
         <li class="flex items-center">
           <IndexDropdown />
         </li>
-        <li class="flex items-center">
-          <a
-            class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-            href="/news"
-          >
-            <span class="inline-block ml-2">News</span>
-          </a>
-        </li>
-
-        <li class="flex items-center">
-          <a
-            class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-            href="/discussion"
-          >
-            <span class="inline-block ml-2">Forum</span>
-          </a>
-        </li>
-
-        <li class="flex items-center">
-          <a
-            class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
-            href="https://github.com/creativetimofficial/notus-svelte?ref=ns-index-navbar"
-          >
-            <span class="inline-block ml-2">Data</span>
-          </a>
-        </li>
 
         <li class="flex items-center">
           <button
-            class="bg-red-400 text-white active:bg-red-500 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+            class="bg-violet-700 text-white active:bg-violet-800 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
             type="button"
           >
-            <i class="fas fa-arrow-alt-circle-down"></i> Download
+            <i class="fas fa-plus"></i> Register
           </button>
         </li>
       </ul>

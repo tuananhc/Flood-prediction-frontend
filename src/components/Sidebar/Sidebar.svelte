@@ -211,7 +211,7 @@
             Settings
           </a>
         </li>
-
+      <!-- Hidden Documentation 
         <li class="items-center">
           <a
             use:link
@@ -224,7 +224,7 @@
         </li>
       </ul>
 
-      <!-- Hidden Documentation 
+      
       
       <hr class="my-4 md:min-w-full" />
       <h6

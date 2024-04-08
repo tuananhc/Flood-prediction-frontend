@@ -4,12 +4,22 @@
 </script>
 
 <!-- Header -->
-<div class="relative bg-violet-950 md:pt-32 pb-32 pt-12">
+<div class="relative bg-violet-950 pt-16 pb-32 ">
   <div class="px-4 md:px-10 mx-auto w-full">
     <div>
+      <div class="pl-3 pb-3">
+        <h2 class="text-white text-xl font-semibold">
+          Kowloon City
+        </h2>
+        <h6 class="uppercase text-blueGray-100 mb-1 text-xs font-semibold">
+          Weather Data
+        </h6>
+      </div>
       <!-- Card stats -->
       <div class="flex flex-wrap">
+     
         <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <br>
           <CardStats
             statSubtitle="RAINFALL ALERT"
             statTitle="AMBER"
@@ -22,6 +32,7 @@
           />
         </div>
         <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <br>
           <CardStats
             statSubtitle="FLOODING DANGER"
             statTitle="LOW"
@@ -34,6 +45,7 @@
           />
         </div>
         <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <br>
           <CardStats
             statSubtitle="WIND STRENGTH"
             statTitle="LIGHT"
@@ -46,6 +58,7 @@
           />
         </div>
         <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <br>
           <CardStats
             statSubtitle="CURRENT TEMP"
             statTitle="35°C"

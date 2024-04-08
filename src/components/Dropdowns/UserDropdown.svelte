@@ -4,7 +4,7 @@
 
   // core components
 
-  const image = "../assets/img/team-1-800x800.jpg";
+  const image = "../assets/img/user.png";
 
   let dropdownPopoverShow = false;
 
@@ -51,26 +51,20 @@
       href="#pablo" on:click={(e) => e.preventDefault()}
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
     >
-      Action
+      View Profile
     </a>
     <a
       href="#pablo" on:click={(e) => e.preventDefault()}
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
     >
-      Another action
-    </a>
-    <a
-      href="#pablo" on:click={(e) => e.preventDefault()}
-      class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-    >
-      Something else here
+      Switch User
     </a>
     <div class="h-0 my-2 border border-solid border-blueGray-100" />
     <a
       href="#pablo" on:click={(e) => e.preventDefault()}
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
     >
-      Seprated link
+      Log Out
     </a>
   </div>
 </div>

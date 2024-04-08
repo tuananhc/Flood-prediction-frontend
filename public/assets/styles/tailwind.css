@@ -2697,8 +2697,31 @@ select {
   transform: translate(-50%, -50%);
 }
 
+.bg-violet-1000	{
+  background-color: rgb(12, 5, 32);
+}
 .bg-violet-950	{
-  background-color: rgb(46 16 101);
+  background-color: rgb(32, 11, 71);
+}
+.bg-violet-700	{
+  background-color: rgb(109 40 217);
+}
+.bg-violet-800	{
+  background-color: rgb(92, 42, 172);
+}
+
+.bg-indigo-900 {
+  background-color: rgb(49 46 129);
+}
+.bg-indigo-800 {
+  background-color: rgb(49 46 129);
+}
+.bg-indigo-200	{
+  background-color: rgb(199 210 254)
+}
+
+.text-violet-1000	{
+  color: rgb(12, 5, 32);
 }
 .text-violet-950	{
   color: rgb(46 16 101);

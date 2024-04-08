@@ -16,10 +16,10 @@
   // from tailwindcss
   export let statIconColor = "bg-red-500";
 </script>
-
 <div
   class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
 >
+  
   <div class="flex-auto p-4">
     <div class="flex flex-wrap">
       <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
