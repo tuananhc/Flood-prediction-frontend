@@ -1517,6 +1517,10 @@ select {
   width: 2rem;
 }
 
+.w-80	{
+  width: 20rem; /* 96px */
+}
+
 .w-\[this-is\\\\\] {
   width: this-is\\;
 }
@@ -3075,6 +3079,10 @@ select {
   padding-left: 0px;
   padding-right: 0px;
 }
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
 
 .px-0\.5 {
   padding-left: 0.125rem;
@@ -3104,6 +3112,15 @@ select {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.px-9	{
+  padding-left: 2.2rem; /* 36px */
+  padding-right: 2.2rem; /* 36px */
+} 
+.px-10	{
+  padding-left: 2.5rem; /* 40px */
+  padding-right: 2.5rem; /* 40px */
 }
 
 .py-1 {
