@@ -18,5 +18,4 @@
       <CardTable />
     </div>
   </div>
-  
 </div>
