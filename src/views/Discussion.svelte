@@ -4,43 +4,46 @@
   // core components
   import IndexNavbar from "components/Navbars/IndexNavbar.svelte";
   import Footer from "components/Footers/Footer.svelte";
+  import DiscussionPost from "../components/DiscussionPost.svelte";
 
   const patternVue = "/assets/img/pattern_svelte.png";
-  export let location;
+  export const data = [
+    {
+      "title": "My house is flooded send help",
+      "content": "DUH"
+    }
+  ]
 </script>
 
 <IndexNavbar />
-<section class="header relative pt-16 items-center flex h-screen max-h-860-px">
-  <div class="container mx-auto items-center flex flex-wrap">
-    <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
+<section class="header relative pt-16 flex h-screen max-h-860-px">
+  <div class="mx-auto items-center flex-0.8 flex-wrap">
       <div class="pt-32 sm:pt-0">
         <h2 class="font-semibold text-4xl text-blueGray-600">
           Discussion
         </h2>
+        <button class="text-lightBlue-500 bg-transparent border border-solid border-lightBlue-500 hover:bg-lightBlue-500 hover:text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded-full outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+          <i class="fas fa-plus"></i>   Create a post
+        </button>
+
         <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
           We predict flood chances throughout Hong Kong with a 100% accuracy. No cap.
         </p>
-        <div class="mt-12">
-          <a
-            href="/admin/dashboard"
-            class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-red-400 active:bg-red-500 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-          >
-            Get started
-          </a>
-          <a
-            href="/auth/login"
-            class="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-          >
-            Register
-          </a>
+        
+        <div>
+          {#each data as post}
+            <DiscussionPost title={post.title} content={post.content}/>
+          {/each}  
         </div>
       </div>
-    </div>
   </div>
-
-  <img
-    class="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860-px"
-    src="{patternVue}"
-    alt="..."
-  />
 </section>
+
+<div class="mb-3 pt-0">
+  <textarea 
+    type="text" 
+    placeholder="Large Input" 
+    class="h-200 px-3 py-4 text-left placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-base shadow outline-none focus:outline-none focus:shadow-outline w-full"
+    style="height: 300px"
+  />
+</div>

@@ -3,24 +3,14 @@
 
   // core components
   import IndexNavbar from "components/Navbars/IndexNavbar.svelte";
-  import Footer from "components/Footers/Footer.svelte";
-
+  import News from "../components/News.svelte";
   const patternVue = "/assets/img/pattern_svelte.png";
-  const componentBtn = "/assets/img/component-btn.png";
-  const componentProfileCard = "/assets/img/component-profile-card.png";
-  const componentInfoCard = "/assets/img/component-info-card.png";
-  const componentInfo2 = "/assets/img/component-info-2.png";
-  const componentMenu = "/assets/img/component-menu.png";
-  const componentBtnPink = "/assets/img/component-btn-pink.png";
-  const documentation = "/assets/img/documentation.png";
-  const login = "/assets/img/login.jpg";
-  const profile = "/assets/img/profile.jpg";
-  const landing = "/assets/img/landing.jpg";
-  export let location;
-</script>
 
-<IndexNavbar />
+</script>
 <section class="header relative pt-16 items-center flex h-screen max-h-860-px">
+  
+  <IndexNavbar />
+  <News/>
   <div class="container mx-auto items-center flex flex-wrap">
     <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
       <div class="pt-32 sm:pt-0">
