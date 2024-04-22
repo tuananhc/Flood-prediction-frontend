@@ -126,6 +126,19 @@
         <li class="items-center">
           <a
             use:link
+            href="/admin/emergency"
+            class="text-xs uppercase py-3 font-bold block {location.href.indexOf('/admin/emergency') !== -1 ? 'text-violet-800 hover:text-violet-600':'text-blueGray-700 hover:text-blueGray-500'}"
+          >
+            <i
+              class="fas fa-table mr-2 text-sm {location.href.indexOf('/admin/emergency') !== -1 ? 'opacity-75' : 'text-blueGray-300'}"
+            ></i>
+            Emergency Info
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            use:link
             href="/admin/tables"
             class="text-xs uppercase py-3 font-bold block {location.href.indexOf('/admin/tables') !== -1 ? 'text-violet-800 hover:text-violet-600':'text-blueGray-700 hover:text-blueGray-500'}"
           >
