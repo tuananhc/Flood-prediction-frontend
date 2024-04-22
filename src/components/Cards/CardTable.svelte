@@ -2,11 +2,11 @@
   // core components
   import TableDropdown from "components/Dropdowns/TableDropdown.svelte";
 
-  const bootstrap = "../assets/img/bootstrap.jpg";
-  const angular = "../assets/img/angular.jpg";
-  const sketch = "../assets/img/sketch.jpg";
-  const react = "../assets/img/react.jpg";
-  const vue = "../assets/img/react.jpg";
+  const bootstrap = "../assets/img/login_bg.jpeg";
+  const angular = "../assets/img/login_bg.jpeg";
+  const sketch = "../assets/img/login_bg.jpeg";
+  const react = "../assets/img/login_bg.jpeg";
+  const vue = "../assets/img/login_bg.jpeg";
 
   const team1 = "../assets/img/team-1-800x800.jpg";
   const team2 = "../assets/img/team-2-800x800.jpg";
@@ -18,7 +18,7 @@
 </script>
 
 <div
-  class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded {color === 'light' ? 'bg-white' : 'bg-red-800 text-white'}"
+  class="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded {color === 'light' ? 'bg-white' : 'bg-red-800 text-white'}"
 >
   <div class="rounded-t mb-0 px-4 py-3 border-0">
     <div class="flex flex-wrap items-center">
@@ -26,41 +26,42 @@
         <h3
           class="font-semibold text-lg {color === 'light' ? 'text-blueGray-700' : 'text-white'}"
         >
-          Card Tables
+          Daily Rainfall Forecast 
         </h3>
       </div>
     </div>
   </div>
   <div class="block w-full overflow-x-auto">
-    <!-- Projects table -->
+    <!--Districts table -->
     <table class="items-center w-full bg-transparent border-collapse">
       <thead>
         <tr>
           <th
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color === 'light' ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100' : 'bg-red-700 text-red-200 border-red-600'}"
           >
-            Project
+            District
           </th>
           <th
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color === 'light' ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100' : 'bg-red-700 text-red-200 border-red-600'}"
           >
-            Budget
+            Amount
           </th>
           <th
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color === 'light' ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100' : 'bg-red-700 text-red-200 border-red-600'}"
           >
-            Status
+            Warning
           </th>
           <th
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color === 'light' ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100' : 'bg-red-700 text-red-200 border-red-600'}"
           >
-            Users
+            Wind Strength
           </th>
           <th
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color === 'light' ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100' : 'bg-red-700 text-red-200 border-red-600'}"
           >
-            Completion
+            Extra Data
           </th>
+          
           <th
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color === 'light' ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100' : 'bg-red-700 text-red-200 border-red-600'}"
           ></th>
@@ -71,58 +72,34 @@
           <th
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
           >
+          
             <img
               src="{bootstrap}"
               class="h-12 w-12 bg-white rounded-full border"
               alt="..."
             />
             <span
-              class="ml-3 font-bold {color === 'light' ? 'btext-blueGray-600' : 'text-whit'}"
+              class="ml-3 font-bold {color === 'light' ? 'btext-blueGray-600' : 'text-white'}"
             >
-              Argon Design System
+              Kowloon City
             </span>
           </th>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            $2,500 USD
+            40mm
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            <i class="fas fa-circle text-orange-500 mr-2"></i> pending
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-          >
-            <div class="flex">
-              <img
-                src="{team1}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-              />
-              <img
-                src="{team2}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-              <img
-                src="{team3}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-              <img
-                src="{team4}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-            </div>
+            <i class="fas fa-circle text-orange-500 mr-2"></i>
+            <strong>Amber</strong>
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
             <div class="flex items-center">
-              <span class="mr-2">60%</span>
+              <span class="mr-2">31mph</span>
               <div class="relative w-full">
                 <div
                   class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
@@ -135,6 +112,35 @@
               </div>
             </div>
           </td>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+            <div class="flex">
+              <!-- images
+              <img
+              src="{team1}"
+              alt="..."
+              class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
+            />
+            <img
+              src="{team2}"
+              alt="..."
+              class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
+            />
+            <img
+              src="{team3}"
+              alt="..."
+              class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
+            />
+            <img
+              src="{team4}"
+              alt="..."
+              class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
+            />
+            -->
+            </div>
+          </td>
+         
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
           >
@@ -153,61 +159,41 @@
             <span
               class="ml-3 font-bold {color === 'light' ? 'btext-blueGray-600' : 'text-whit'}"
             >
-              Angular Now UI Kit PRO
+              Kwon Tong
             </span>
           </th>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            $1,800 USD
+            30mm
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
             <i class="fas fa-circle text-emerald-500 mr-2"></i>
-            completed
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-          >
-            <div class="flex">
-              <img
-                src="{team1}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-              />
-              <img
-                src="{team2}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-              <img
-                src="{team3}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-              <img
-                src="{team4}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-            </div>
+            None
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
             <div class="flex items-center">
-              <span class="mr-2">100%</span>
+              <span class="mr-2">10mph</span>
               <div class="relative w-full">
                 <div
                   class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200"
                 >
                   <div
-                    style="width: 100%;"
+                    style="width: 10%;"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"
                   ></div>
                 </div>
               </div>
+            </div>
+          </td>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+            <div class="flex">
             </div>
           </td>
           <td
@@ -228,50 +214,25 @@
             <span
               class="ml-3 font-bold {color === 'light' ? 'btext-blueGray-600' : 'text-whit'}"
             >
-              Black Dashboard Sketch
+            Sham Shui Po
             </span>
           </th>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            $3,150 USD
+            50mm
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            <i class="fas fa-circle text-red-500 mr-2"></i> delayed
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-          >
-            <div class="flex">
-              <img
-                src="{team1}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-              />
-              <img
-                src="{team2}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-              <img
-                src="{team3}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-              <img
-                src="{team4}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-            </div>
+            <i class="fas fa-circle text-red-500 mr-2"></i>
+            <strong>Red</strong>
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
             <div class="flex items-center">
-              <span class="mr-2">73%</span>
+              <span class="mr-2">40mph</span>
               <div class="relative w-full">
                 <div
                   class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
@@ -282,6 +243,13 @@
                   ></div>
                 </div>
               </div>
+            </div>
+          </td>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+            <div class="flex">
+          
             </div>
           </td>
           <td
@@ -302,60 +270,42 @@
             <span
               class="ml-3 font-bold {color === 'light' ? 'btext-blueGray-600' : 'text-whit'}"
             >
-              React Material Dashboard
+              Wong Tai Sin
             </span>
           </th>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            $4,400 USD
+            35mm
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            <i class="fas fa-circle text-teal-500 mr-2"></i> on schedule
+            <i class="fas fa-circle text-teal-500 mr-2"></i> 
+            None
           </td>
+          <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+          <div class="flex items-center">
+            <span class="mr-2">25mph</span>
+            <div class="relative w-full">
+              <div
+                class="overflow-hidden h-2 text-xs flex rounded bg-teal-200"
+              >
+                <div
+                  style="width: 30%"
+                  class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
             <div class="flex">
-              <img
-                src="{team1}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-              />
-              <img
-                src="{team2}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-              <img
-                src="{team3}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-              <img
-                src="{team4}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-            </div>
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-          >
-            <div class="flex items-center">
-              <span class="mr-2">90%</span>
-              <div class="relative w-full">
-                <div
-                  class="overflow-hidden h-2 text-xs flex rounded bg-teal-200"
-                >
-                  <div
-                    style="width: 90%;"
-                    class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500"
-                  ></div>
-                </div>
-              </div>
+              
             </div>
           </td>
           <td
@@ -376,61 +326,42 @@
             <span
               class="ml-3 font-bold {color === 'light' ? 'btext-blueGray-600' : 'text-whit'}"
             >
-              React Material Dashboard
+            Yau Tsim Mong
             </span>
           </th>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            $2,200 USD
+            24mm
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
             <i class="fas fa-circle text-emerald-500 mr-2"></i>
-            completed
-          </td>
-          <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-          >
-            <div class="flex">
-              <img
-                src="{team1}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-              />
-              <img
-                src="{team2}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-              <img
-                src="{team3}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-              <img
-                src="{team4}"
-                alt="..."
-                class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-              />
-            </div>
+            None
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
             <div class="flex items-center">
-              <span class="mr-2">100%</span>
+              <span class="mr-2">15mph</span>
               <div class="relative w-full">
                 <div
                   class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200"
                 >
                   <div
-                    style="width: 100%;"
+                    style="width: 25%;"
                     class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"
                   ></div>
                 </div>
               </div>
+            </div>
+          </td>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+            <div class="flex">
+             
             </div>
           </td>
           <td

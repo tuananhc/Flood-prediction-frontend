@@ -1,0 +1,58 @@
+<script>
+  // core components
+  import TableDropdown from "components/Dropdowns/TableDropdown.svelte";
+
+  const bootstrap = "../assets/img/login_bg.jpeg";
+  const angular = "../assets/img/login_bg.jpeg";
+  const sketch = "../assets/img/login_bg.jpeg";
+  const react = "../assets/img/login_bg.jpeg";
+  const vue = "../assets/img/login_bg.jpeg";
+
+  const team1 = "../assets/img/team-1-800x800.jpg";
+  const team2 = "../assets/img/team-2-800x800.jpg";
+  const team3 = "../assets/img/team-3-800x800.jpg";
+  const team4 = "../assets/img/team-4-470x470.png";
+
+  // can be one of light or dark
+  export let color = "light";
+</script>
+
+<div
+  class="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded {color === 'light' ? 'bg-white' : 'bg-red-800 text-white'}"
+>
+  <div class="rounded-t mb-0 px-4 py-3 border-0">
+    <div class="flex flex-wrap items-center">
+      <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+        <h3
+          class="font-semibold text-lg {color === 'light' ? 'text-blueGray-700' : 'text-white'}"
+        >
+          Upload Data 
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="block w-full overflow-x-auto">
+    <!--Districts table -->
+    <form class="max-w-xs mx-auto px-9">
+      <div class="mb-5">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dataset</label>
+        <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Rainfall from Automatic Weather Station" required />
+      </div>
+      <div class="mb-5">
+        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data Provider</label>
+        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Hong Kong Observatory" required />
+      </div>
+      <!-- change for, type and id!-->
+      <div class="mb-5">
+        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data Category</label>
+        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Climate and Weather" required />
+      </div>
+      <div class="mb-5">
+        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Format</label>
+        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Upload JSON, CSV, etc." required />
+      </div>
+      <button type="submit" class="bg-blueGray-600 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-80 sm:w-auto mb-6 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Upload File</button>
+      <button type="submit" class="bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+    </form>
+  </div>
+</div>

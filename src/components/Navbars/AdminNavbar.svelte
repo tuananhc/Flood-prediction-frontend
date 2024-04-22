@@ -12,7 +12,7 @@
   >
     <!-- Brand -->
     <a
-      class="text-white text-sm uppercase hidden lg:inline-block font-semibold"
+      class="text-white text-sm uppercase hidden lg:inline-block font-semibold reddit"
       href="#pablo" on:click={(e) => e.preventDefault()}
     >
       Flood Prediction Dashboard

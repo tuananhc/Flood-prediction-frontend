@@ -4,57 +4,70 @@
 </script>
 
 <!-- Header -->
-<div class="relative bg-purple-500 md:pt-32 pb-32 pt-12">
+<div class="relative bg-violet-950 pt-16 pb-32 ">
   <div class="px-4 md:px-10 mx-auto w-full">
     <div>
+      <div class="pl-3 pb-3">
+        <h2 class="text-white text-xl font-semibold">
+          Kowloon City
+        </h2>
+        <h6 class="uppercase text-blueGray-100 mb-1 text-xs font-semibold">
+          Weather Data
+        </h6>
+      </div>
       <!-- Card stats -->
       <div class="flex flex-wrap">
+     
         <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <br>
           <CardStats
-            statSubtitle="TRAFFIC"
-            statTitle="350,897"
+            statSubtitle="RAINFALL ALERT"
+            statTitle="AMBER"
             statArrow="up"
-            statPercent="3.48"
-            statPercentColor="text-emerald-500"
-            statDescripiron="Since last month"
-            statIconName="far fa-chart-bar"
-            statIconColor="bg-red-500"
-          />
-        </div>
-        <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
-          <CardStats
-            statSubtitle="NEW USERS"
-            statTitle="2,356"
-            statArrow="down"
-            statPercent="3.48"
-            statPercentColor="text-red-500"
-            statDescripiron="Since last week"
-            statIconName="fas fa-chart-pie"
+            statPercent="60mm rainfall"
+            statPercentColor="text-orange-500"
+            statDescripiron="in the past hour"
+            statIconName="fas fa-cloud-showers-heavy"
             statIconColor="bg-orange-500"
           />
         </div>
         <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <br>
           <CardStats
-            statSubtitle="SALES"
-            statTitle="924"
+            statSubtitle="FLOODING DANGER"
+            statTitle="LOW"
             statArrow="down"
-            statPercent="1.10"
-            statPercentColor="text-orange-500"
-            statDescripiron="Since yesterday"
-            statIconName="fas fa-users"
-            statIconColor="bg-pink-500"
+            statPercent="Rain expected to stop"
+            statPercentColor="text-emerald-500"
+            statDescripiron="in two hours"
+            statIconName="fas fa-water"
+            statIconColor="bg-red-500"
           />
         </div>
         <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <br>
           <CardStats
-            statSubtitle="PERFORMANCE"
-            statTitle="49,65%"
+            statSubtitle="WIND STRENGTH"
+            statTitle="LIGHT"
             statArrow="up"
-            statPercent="12"
-            statPercentColor="text-emerald-500"
-            statDescripiron="Since last month"
-            statIconName="fas fa-percent"
-            statIconColor="bg-emerald-500"
+            statPercent="10MPH"
+            statPercentColor="text-sky-500"
+            statDescripiron="light breeze with rainfall"
+            statIconName="fas fa-wind"
+            statIconColor="bg-sky-500"
+          />
+        </div>
+        <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
+          <br>
+          <CardStats
+            statSubtitle="CURRENT TEMP"
+            statTitle="35°C"
+            statArrow="up"
+            statPercent="+3°C"
+            statPercentColor="text-blue-800"
+            statDescripiron="since yesterday"
+            statIconName="fas fa-cloud-sun-rain"
+            statIconColor="bg-blue-800"
           />
         </div>
       </div>

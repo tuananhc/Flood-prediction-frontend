@@ -20,8 +20,10 @@
           </a>
         </div>
       </div>
+     
       <div class="w-full md:w-8/12 px-4">
         <ul class="flex flex-wrap list-none md:justify-end justify-center">
+          <!---
           <li>
             <a
               href="https://www.creative-tim.com?ref=ns-footer-admin"
@@ -30,6 +32,7 @@
               Svelte Dashboard by Creative Tim
             </a>
           </li>
+          -->
           <li>
             <a
               href="https://github.com/creativetimofficial/notus-svelte/blob/main/LICENSE.md?ref=ns-footer-admin"

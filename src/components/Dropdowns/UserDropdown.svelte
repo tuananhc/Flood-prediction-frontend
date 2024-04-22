@@ -4,7 +4,8 @@
 
   // core components
 
-  const image = "../assets/img/team-1-800x800.jpg";
+  const image = "../assets/img/user.png";
+  const team2 = "/assets/img/team-2-800x800.jpg";
 
   let dropdownPopoverShow = false;
 
@@ -28,8 +29,8 @@
   <a
     class="text-blueGray-500 block"
     href="#pablo"
-    bind:this="{btnDropdownRef}"
-    on:click="{toggleDropdown}"
+    bind:this={btnDropdownRef}
+    on:click={toggleDropdown}
   >
     <div class="items-center flex">
       <span
@@ -38,39 +39,36 @@
         <img
           alt="..."
           class="w-full rounded-full align-middle border-none shadow-lg"
-          src="{image}"
+          src={team2}
         />
       </span>
     </div>
   </a>
   <div
-    bind:this="{popoverDropdownRef}"
-    class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 {dropdownPopoverShow ? 'block':'hidden'}"
+    bind:this={popoverDropdownRef}
+    class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 {dropdownPopoverShow
+      ? 'block'
+      : 'hidden'}"
   >
     <a
-      href="#pablo" on:click={(e) => e.preventDefault()}
+      href="/profile"
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
     >
-      Action
+      View Profile
     </a>
     <a
-      href="#pablo" on:click={(e) => e.preventDefault()}
+      href="/auth/login"
+      on:click={(e) => e.preventDefault()}
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
     >
-      Another action
-    </a>
-    <a
-      href="#pablo" on:click={(e) => e.preventDefault()}
-      class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-    >
-      Something else here
+      Switch User
     </a>
     <div class="h-0 my-2 border border-solid border-blueGray-100" />
     <a
-      href="#pablo" on:click={(e) => e.preventDefault()}
+      href="/"
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
     >
-      Seprated link
+      Log Out
     </a>
   </div>
 </div>
