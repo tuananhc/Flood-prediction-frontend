@@ -20,7 +20,7 @@
             href="https://www.creative-tim.com?ref=ns-footer-small"
             class="text-white hover:text-blueGray-300 text-sm font-semibold py-1"
           >
-            Creative Tim
+            FloodTech
           </a>
         </div>
       </div>
@@ -31,23 +31,7 @@
               href="https://www.creative-tim.com?ref=ns-footer-small"
               class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
             >
-              Creative Tim
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.creative-tim.com/presentation?ref=ns-footer-small"
-              class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
-            >
-              About Us
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://blog.creative-tim.com?ref=ns-footer-small"
-              class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
-            >
-              Blog
+              Svelte Dashboard by Creative Tim
             </a>
           </li>
           <li>
@@ -55,7 +39,7 @@
               href="https://github.com/creativetimofficial/notus-svelte/blob/main/LICENSE.md?ref=ns-footer-small"
               class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
             >
-              MIT License
+              Github
             </a>
           </li>
         </ul>
