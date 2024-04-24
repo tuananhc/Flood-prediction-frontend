@@ -12,7 +12,7 @@
           Kowloon City
         </h2>
         <h6 class="uppercase text-blueGray-100 mb-1 text-xs font-semibold">
-          Weather Data
+          Weather Forecast
         </h6>
       </div>
       <!-- Card stats -->

@@ -1,21 +1,41 @@
 <script>
+  // navbar and header
+  import AdminNavbar from "components/Navbars/AdminNavbar.svelte";
+  import HeaderStats from "components/Headers/HeaderStats.svelte";
+
+  // main map component placeholder
+  import MapExample from "components/Maps/MapExample.svelte";
+ 
   // core components
   import CardTable from "components/Cards/CardTable.svelte";
-  import CardLineChart from "components/Cards/CardLineChart.svelte";
-  import CardBarChart from "components/Cards/CardBarChart.svelte";
   export let location;
 </script>
 
-<div>
-  <div class="flex flex-wrap">
-    <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-      <CardLineChart />
-    </div>
-    <div class="w-full xl:w-4/12 px-4">
-      <CardBarChart />
-    </div>
-    <div class="w-full mb-12 px-4">
-      <CardTable />
+<div class="relative md:ml-64 bg-blueGray-100">
+  <AdminNavbar />
+  <HeaderStats />
+
+  <div class="px-4 md:px-10 mx-auto w-full -m-24">
+    <div class="flex flex-wrap">
+      <div class="w-full px-4">
+        <div
+          class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
+          >
+          <div class="p-6">
+            <h6 class="uppercase text-blueGray-400 mb-1 text-xs font-semibold">
+              Showing Flood Risk Per District
+            </h6>
+            <h2 class="text-blueGray-700 text-xl font-semibold">
+              Hong Kong City
+            </h2>
+          </div>
+          <MapExample />
+        </div>
+      </div>
+      <div class="w-full mb-12 px-4">
+        <CardTable />
+      </div>
     </div>
   </div>
+  
 </div>

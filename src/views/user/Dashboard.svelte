@@ -1,5 +1,6 @@
 <script>
   // core components
+  import HeaderStats from "components/Headers/HeaderStats.svelte";
   import CardLineChart from "components/Cards/CardLineChart.svelte";
   import CardBarChart from "components/Cards/CardBarChart.svelte";
   import CardPageVisits from "components/Cards/CardPageVisits.svelte";
@@ -7,6 +8,8 @@
   export let location;
 </script>
 
+<HeaderStats />
+<div class="px-4 md:px-10 mx-auto w-full -m-24">
 <div>
   <div class="flex flex-wrap">
     <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
@@ -24,4 +27,5 @@
       <CardSocialTraffic />
     </div>
   </div>
+</div>
 </div>

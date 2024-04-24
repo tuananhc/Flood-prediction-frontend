@@ -25,7 +25,7 @@
     <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
       <div class="pt-32 sm:pt-0">
         <h2 class="font-semibold text-4xl text-violet-950">
-          The Future of Flood Prediction.
+          The Future of Flood Prediction
         </h2>
         <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
           Using our newest Deep Learning software, accurately predict the risk of flooding in your area by 80%. Try it to believe it.
@@ -35,13 +35,13 @@
             href="/admin/dashboard"
             class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-red-400 active:bg-red-500 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
           >
-            Get started
+            Flood Forecast
           </a>
           <a
-            href="/auth/login"
-            class="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-violet-800 active:bg-violet-800 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+          href="/admin/emergency"
+          class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-red-400 active:bg-red-500 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
           >
-            Register
+            Emergency Information
           </a>
         </div>
       </div>
@@ -53,7 +53,6 @@
   />
   </div>
 
- 
 </section>
 <!-- Middle Layout
 <section class="pb-16 bg-blueGray-200 relative pt-32">

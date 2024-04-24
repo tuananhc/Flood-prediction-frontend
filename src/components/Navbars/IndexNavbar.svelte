@@ -2,7 +2,6 @@
   import { link } from "svelte-routing";
 
   // core components
-  import IndexDropdown from "components/Dropdowns/IndexDropdown.svelte";
 
   let navbarOpen = false;
 
@@ -38,10 +37,26 @@
     <div
       class="lg:flex flex-grow items-center {navbarOpen ? 'block':'hidden'}"
       id="example-navbar-warning"
-    >
-      <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+    > 
+    <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+
+    <!-- TEST ROUTING -->
         <li class="flex items-center">
-          <IndexDropdown />
+          <a
+          href="/admin/dashboard"
+          class="hover:text-blueGray-600 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
+          >
+            Forecast
+          </a>
+        </li>
+
+        <li class="flex items-center">
+          <a
+          href="/admin/emergency"
+          class="hover:text-blueGray-600 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
+          >
+            Emergency Info
+          </a>
         </li>
 
         <li class="flex items-center">

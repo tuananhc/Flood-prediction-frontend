@@ -1,17 +1,5 @@
 <script>
   // core components
-  import TableDropdown from "components/Dropdowns/TableDropdown.svelte";
-
-  const bootstrap = "../assets/img/login_bg.jpeg";
-  const angular = "../assets/img/login_bg.jpeg";
-  const sketch = "../assets/img/login_bg.jpeg";
-  const react = "../assets/img/login_bg.jpeg";
-  const vue = "../assets/img/login_bg.jpeg";
-
-  const team1 = "../assets/img/team-1-800x800.jpg";
-  const team2 = "../assets/img/team-2-800x800.jpg";
-  const team3 = "../assets/img/team-3-800x800.jpg";
-  const team4 = "../assets/img/team-4-470x470.png";
 
   // can be one of light or dark
   export let color = "light";
