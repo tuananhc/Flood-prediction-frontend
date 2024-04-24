@@ -1,10 +1,9 @@
 <script>
   // core components
-  import CardStats from "components/Cards/CardStats.svelte";
 </script>
 
 <!-- Header -->
-<div class="relative bg-violet-950 pt-16 pb-32 ">
+<div class="relative bg-violet-950 pt-16 pb-28">
   <div class="px-4 md:px-10 mx-auto w-full">
     <div>
       <div class="pl-3 pb-3">
@@ -15,10 +14,6 @@
           SHOWING INFORMATION FOR HONG KONG
         </h6>
       </div>
-      <!-- Card stats
-      <div class="flex flex-wrap">
-     
-      </div> -->
     </div>
   </div>
 </div>
