@@ -3,8 +3,7 @@
 
   // components for this layout
   import Sidebar from "components/Sidebar/Sidebar.svelte";
-  import FooterAdmin from "components/Footers/FooterAdmin.svelte";
-
+  
   // pages for this layout
   import Dashboard from "views/admin/Dashboard.svelte";
   import Settings from "views/admin/Settings.svelte";
@@ -13,10 +12,11 @@
   import Emergency from "views/admin/Emergency.svelte";
 
   export let location;
-  export let admin = "";
+  //export let admin = "";
 </script>
 
 <div>
+  <div>
   <Sidebar location={location}/>
       <Router url="admin">
         <Route path="dashboard" component="{Dashboard}" />
@@ -25,6 +25,6 @@
         <Route path="tables" component="{Tables}" />
         <Route path="maps" component="{Maps}" />
       </Router>
-    <FooterAdmin /> 
+    </div>
 </div>
 

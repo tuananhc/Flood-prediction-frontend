@@ -2,6 +2,7 @@
   // navbar and header
   import AdminNavbar from "components/Navbars/AdminNavbar.svelte";
   import HeaderStats from "components/Headers/HeaderStats.svelte";
+  import FooterAdmin from "components/Footers/FooterAdmin.svelte";
   
   // core components
   import CardLineChart from "components/Cards/CardLineChart.svelte";
@@ -24,6 +25,7 @@
         <CardBarChart />
       </div>  
     </div>
+  <FooterAdmin /> 
   </div>
   
 </div>

@@ -2,6 +2,7 @@
   // navbar and header
   import AdminNavbar from "components/Navbars/AdminNavbar.svelte";
   import HeaderStats from "components/Headers/HeaderStats.svelte";
+  import FooterAdmin from "components/Footers/FooterAdmin.svelte";
 
   // main map component placeholder
   import MapExample from "components/Maps/MapExample.svelte";
@@ -33,9 +34,10 @@
         </div>
       </div>
       <div class="w-full mb-12 px-4">
-        <CardTable />
+      <CardTable />
       </div>
     </div>
+    <FooterAdmin /> 
   </div>
   
 </div>

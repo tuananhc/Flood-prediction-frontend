@@ -2,6 +2,7 @@
   // navbar and header
   import AdminNavbar from "components/Navbars/AdminNavbar.svelte";
   import HeaderStats from "components/Headers/HeaderStats.svelte";
+  import FooterAdmin from "components/Footers/FooterAdmin.svelte";
 
   // core components
   import CardUpload from "components/Cards/CardUpload.svelte";
@@ -31,6 +32,7 @@
       </div>
       -->
     </div>
+  <FooterAdmin /> 
   </div>
   
 </div>
