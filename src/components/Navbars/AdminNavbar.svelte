@@ -15,7 +15,7 @@
       class="reddit text-white text-sm uppercase hidden lg:inline-block font-semibold"
       href="#pablo" on:click={(e) => e.preventDefault()}
     >
-      Flood Prediction Dashboard
+      Flood Prediction Dashboard 洪水预报
     </a>
     <!-- Form 
     <form

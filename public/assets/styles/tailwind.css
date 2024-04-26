@@ -1397,6 +1397,11 @@ select {
   display: grid;
 }
 
+.grid-5{ 
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+}
+
 .grid-3{ 
   display: grid;
   grid-template-columns: repeat(3, minmax(0,1fr));
@@ -2776,8 +2781,6 @@ select {
 .text-sky-500	{
   color: rgb(14 165 233);
 }
-
-
 
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
