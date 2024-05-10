@@ -9,8 +9,62 @@
     confirm_password: "",
     districts: [],
   };
+  let errors = {
+    display_name: "",
+    email: "",
+    password: "",
+    confirm_password: "",
+    districts: "",
+  };
+  let valid = false;
 
   const submitHandler = () => {
+    valid = true;
+    //validate display name
+    if (details.display_name === "") {
+      errors.display_name = "Name is required";
+      valid = false;
+    } else {
+      errors.display_name = "";
+    }
+    //validate email
+    if (details.email === "") {
+      errors.email = "Email is required";
+      valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = "Email is invalid";
+      valid = false;
+    } else {
+      errors.email = "";
+    }
+    //validate password
+    if (details.password === "") {
+      errors.password = "Password is required";
+      valid = false;
+    } else {
+      errors.password = "";
+    }
+    //validate confirm password
+    if (details.confirm_password === "") {
+      errors.confirm_password = "Confirm Password is required";
+      valid = false;
+    } else if (confirm_password !== password) {
+      errors.confirm_password = "Passwords do not match";
+      valid = false;
+    } else {
+      errors.confirm_password = "";
+    }
+    //validate district
+    if (details.districts.length === 0) {
+      errors.districts = "District is required";
+      valid = false;
+    } else {
+      errors.districts = "";
+    }
+    if (!valid) {
+      return;
+    }
+    //submit user details to server
     createUser(details).then((res) => {
       console.log(res);
     });
@@ -48,8 +102,8 @@
                 placeholder="Name"
                 bind:value={details.display_name}
               />
+              <div class="error">{errors.display_name}</div>
             </div>
-
             <div class="relative w-full mb-3">
               <label
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -64,8 +118,8 @@
                 placeholder="Email"
                 bind:value={details.email}
               />
+              <div class="error">{errors.email}</div>
             </div>
-
             <div class="relative w-full mb-3">
               <label
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -80,6 +134,7 @@
                 placeholder="Password"
                 bind:value={details.password}
               />
+              <div class="error">{errors.password}</div>
             </div>
             <div class="relative w-full mb-3">
               <label
@@ -95,6 +150,7 @@
                 placeholder="Confirm Password"
                 bind:value={details.confirm_password}
               />
+              <div class="error">{errors.confirm_password}</div>
             </div>
             <div class="relative w-full mb-3">
               <label
@@ -104,6 +160,7 @@
                 District
               </label>
               <DistrictDropdown />
+              <div class="error">{errors.districts}</div>
             </div>
 
             <!-- Privacy Policy 

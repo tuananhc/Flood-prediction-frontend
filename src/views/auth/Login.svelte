@@ -1,21 +1,46 @@
 <script>
   import { link } from "svelte-routing";
-  import { onMount } from "svelte";
   import { userLogin } from "../../api/user";
 
   let details = {
     email: "",
     password: "",
   };
+  let errors = {
+    email: "",
+    password: "",
+  };
+  let valid = false;
 
   // core components
   const github = "../assets/img/github.svg";
   const google = "../assets/img/google.svg";
   export let location;
 
-  //form validation
+  //user submit handler and form validation
   const submitHandler = () => {
-    console.log("HI", details);
+    valid = true;
+    //validate email
+    if (details.email === "") {
+      errors.email = "Email is required";
+      valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(details.email)) {
+      errors.email = "Email is invalid";
+      valid = false;
+    } else {
+      errors.email = "";
+    }
+    //validate password
+    if (details.password === "") {
+      errors.password = "Password is required";
+      valid = false;
+    } else {
+      errors.password = "";
+    }
+    if (!valid) {
+      return;
+    }
+    //submit user details to server
     userLogin(details).then((res) => {
       console.log(res);
     });
@@ -85,6 +110,7 @@
                 name="email"
                 bind:value={details.email}
               />
+              <div class="error">{errors.email}</div>
             </div>
 
             <div class="relative w-full mb-3">
@@ -101,6 +127,7 @@
                 placeholder="Password"
                 bind:value={details.password}
               />
+              <div class="error">{errors.password}</div>
             </div>
             <div>
               <label class="inline-flex items-center cursor-pointer">
