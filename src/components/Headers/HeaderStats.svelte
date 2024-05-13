@@ -52,10 +52,11 @@
       {wind = "Gale";}
 
     // temperature
-    calcTemp = (Math.trunc(resp.current.temp)) - (Math.trunc(resp.daily[0].temp.max));
-    plusTemp = calcTemp + "°C";
-    negTemp =(Math.trunc(resp.daily[0].temp.max)) - (Math.trunc(resp.current.temp)) + "°C";
     currentTemp = resp.current.temp + "°C";
+    calcTemp = (Math.trunc(resp.current.temp)) - (Math.trunc(resp.daily[1].temp.max));
+    plusTemp = calcTemp + "°C";
+    negTemp =(Math.trunc(resp.daily[1].temp.max)) - (Math.trunc(resp.current.temp)) + "°C";
+
   }
 </script>
 

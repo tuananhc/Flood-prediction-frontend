@@ -8,8 +8,36 @@
   const react = "../assets/img/login_bg.jpeg";
   const vue = "../assets/img/login_bg.jpeg";
 
-  // can be one of light or dark
+  // hong kong api
+  let url = `https://data.weather.gov.hk/weatherAPI/opendata/hourlyRainfall.php?lang=en`;
+
+  // rainfall data
+  export let shatin = '';
+  export let kwontong = '';
+  export let sham = '';
+  export let sai = '';
+  export let taipo = '';
   export let color = "light";
+
+  fetch(url)
+    .then((resp) => {
+      if (!resp.ok) throw new Error(resp.statusText);
+      return resp.json();
+    })
+    .then((data) => {
+      displayRainfall(data);
+    })
+    .catch(console.err);
+
+  async function displayRainfall(resp){
+    console.log(resp);
+    shatin = resp.hourlyRainfall[21].value + "mm";
+    kwontong = resp.hourlyRainfall[4].value + "mm";
+    sham = resp.hourlyRainfall[23].value + "mm";
+    sai = resp.hourlyRainfall[16].value + "mm";
+    taipo = resp.hourlyRainfall[6].value + "mm";
+  }
+
 </script>
 
 <div
@@ -21,7 +49,7 @@
         <h3
           class="font-semibold text-lg {color === 'light' ? 'text-blueGray-700' : 'text-white'}"
         >
-          Daily Rainfall Forecast 
+          Rainfall Every 15 Minutes
         </h3>
       </div>
     </div>
@@ -54,7 +82,7 @@
           <th
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color === 'light' ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100' : 'bg-red-700 text-red-200 border-red-600'}"
           >
-            Extra Data
+            Station Location
           </th>
           
           <th
@@ -76,19 +104,19 @@
             <span
               class="ml-3 font-bold {color === 'light' ? 'btext-blueGray-600' : 'text-white'}"
             >
-              Kowloon City
+              Sha Tin
             </span>
           </th>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            40mm
+            {shatin}
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            <i class="fas fa-circle text-orange-500 mr-2"></i>
-            <strong>Amber</strong>
+            <i class="fas fa-circle text-emerald-500 mr-2"></i>
+            <span>None</span>
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -108,34 +136,10 @@
             </div>
           </td>
           <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace p-4"
           >
-            <div class="flex">
-              <!-- images
-              <img
-              src="{team1}"
-              alt="..."
-              class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-            />
-            <img
-              src="{team2}"
-              alt="..."
-              class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-            />
-            <img
-              src="{team3}"
-              alt="..."
-              class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-            />
-            <img
-              src="{team4}"
-              alt="..."
-              class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-            />
-            -->
-            </div>
+          Po Leung Kuk Wu Chung College, Sha Tin District, New Territories
           </td>
-         
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
           >
@@ -160,7 +164,7 @@
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            30mm
+            {kwontong}
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -186,9 +190,10 @@
             </div>
           </td>
           <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace p-4"
           >
             <div class="flex">
+              Mu Kuang English School, 55, Kung Lok Road, Hong Lee Court, Ngau Tau Kok, Kwun Tong District
             </div>
           </td>
           <td
@@ -215,13 +220,13 @@
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            50mm
+            {sham}
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            <i class="fas fa-circle text-red-500 mr-2"></i>
-            <strong>Red</strong>
+            <i class="fas fa-circle text-emerald-500 mr-2"></i>
+            <span>None</span>
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -241,10 +246,10 @@
             </div>
           </td>
           <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace p-4"
           >
             <div class="flex">
-          
+              Tak Nga Secondary School, Fa Po Street, Fa Po Villa, Shek Kip Mei, Sham Shui Po District
             </div>
           </td>
           <td
@@ -265,13 +270,13 @@
             <span
               class="ml-3 font-bold {color === 'light' ? 'btext-blueGray-600' : 'text-whit'}"
             >
-              Wong Tai Sin
+              Sai Kung
             </span>
           </th>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            35mm
+            {sai}
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -297,10 +302,10 @@
           </div>
         </td>
           <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace p-4"
           >
             <div class="flex">
-              
+              Tseung Kwan O Government Secondary School, Tseung Kwan O Village, Sai Kung District
             </div>
           </td>
           <td
@@ -321,13 +326,13 @@
             <span
               class="ml-3 font-bold {color === 'light' ? 'btext-blueGray-600' : 'text-whit'}"
             >
-            Yau Tsim Mong
+            Tai Po
             </span>
           </th>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
-            24mm
+            {taipo}
           </td>
           <td
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -353,10 +358,10 @@
             </div>
           </td>
           <td
-            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace p-4"
           >
             <div class="flex">
-             
+              Hong Kong Red Swastika Society Tai Po Secondary School, 6, Chung Nga Road, Nam Hang, Tit Mei Tsai, Nam Hang Village, Tai Po District
             </div>
           </td>
           <td
