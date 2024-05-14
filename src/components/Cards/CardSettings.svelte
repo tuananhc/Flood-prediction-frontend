@@ -3,7 +3,7 @@
 >
   <div class="rounded-t bg-white mb-0 px-6 py-6">
     <div class="text-center flex justify-between">
-      <h6 class="text-blueGray-700 text-xl font-bold">My account</h6>
+      <h6 class="text-blueGray-700 text-xl font-bold">My Account</h6>
       <button
         class="bg-red-400 text-white active:bg-red-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
         type="button"
@@ -30,7 +30,7 @@
               id="grid-username"
               type="text"
               class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              value="lucky.jesse"
+              value="admin"
             />
           </div>
         </div>
@@ -46,7 +46,7 @@
               id="grid-email"
               type="email"
               class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              value="jesse@example.com"
+              value="admin@floodtech.com"
             />
           </div>
         </div>
@@ -62,7 +62,7 @@
               id="grid-first-name"
               type="text"
               class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              value="Lucky"
+              value="Tuan"
             />
           </div>
         </div>
@@ -78,7 +78,7 @@
               id="grid-last-name"
               type="text"
               class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              value="Jesse"
+              value="Chau"
             />
           </div>
         </div>
@@ -102,7 +102,7 @@
               id="grid-address"
               type="text"
               class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
+              value="Swinburne University"
             />
           </div>
         </div>
@@ -118,7 +118,7 @@
               id="grid-city"
               type="email"
               class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              value="New York"
+              value="Hong Kong"
             />
           </div>
         </div>
@@ -134,7 +134,7 @@
               id="grid-country"
               type="text"
               class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              value="United States"
+              value="China"
             />
           </div>
         </div>
@@ -175,8 +175,7 @@
               type="text"
               class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               rows="4"
-              value="A beautiful UI Kit and Admin for Svelte & Tailwind CSS. It is Free
-                and Open Source."
+              value="Administrator of FloodTech"
             />
           </div>
         </div>

@@ -35,7 +35,7 @@
       </div>
     </div>
     <img
-    class="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-max max-h-screen"
+    class="object-fill absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-max max-h-screen"
     src="{patternVue}"
     alt="..."
   />
