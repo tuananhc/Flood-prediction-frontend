@@ -2724,12 +2724,26 @@ select {
   border-color: transparent;
 }
 /* new */
+.fullbg{
+    background-image: '/assets/img/main.jpeg';
+		height: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+}
 .centered a{
   float: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.border-indigo{
+  border-color: rgb(49 46 129);
+}
+.text-indigo {
+  color: rgb(49 46 129);
 }
 
 .bg-violet-1000	{
@@ -4354,6 +4368,11 @@ select {
 .active\:bg-blueGray-600:active {
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+
+.active\.bg-indigo-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
 
 .active\:bg-indigo-600:active {

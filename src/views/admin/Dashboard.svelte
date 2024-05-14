@@ -7,9 +7,9 @@
   // main map component placeholder
   import MapExample from "components/Maps/MapExample.svelte";
  
-  // core components
+  // card components
   import CardTable from "components/Cards/CardTable.svelte";
-  export let location;
+  import CardPredict from "components/Cards/CardPredict.svelte";
 </script>
 
 <div class="relative md:ml-64 bg-blueGray-100">
@@ -33,8 +33,11 @@
           <MapExample />
         </div>
       </div>
+      <div class="w-full px-4">
+        <CardPredict />
+      </div>
       <div class="w-full mb-12 px-4">
-      <CardTable />
+        <CardTable />
       </div>
     </div>
     <FooterAdmin /> 
