@@ -2,6 +2,7 @@
   // core components
   //import { onMount } from "svelte";
   import CardStats from "components/Cards/CardStats.svelte";
+  export let checkRain = '';
   export let rain = '';
   
   export let calcTemp = '';
@@ -33,8 +34,12 @@
   async function showWeather(resp){
     console.log(resp);
     // rain
-    rain = resp.daily[0].rain + "mm";
-    
+    checkRain = resp.daily[0].rain;
+    if (!checkRain){
+      rain = "No rainfall ";
+    } else {
+      rain = resp.daily[0].rain + " mm of rainfall ";
+    }
     // wind stats
     currentWind = resp.current.wind_speed + " m/sec";
     windStat = resp.current.wind_speed
@@ -49,7 +54,7 @@
     else if (windStat < 5.5) 
       {wind = "Gale";}
     else if (windStat >= 9) 
-      {wind = "Gale";}
+      {wind = "Strong";}
 
     // temperature
     currentTemp = resp.current.temp + "°C";
@@ -82,7 +87,7 @@
             statArrow="up"
             statPercent={rain}
             statPercentColor="text-orange-500"
-            statDescripiron="of rainfall yesterday"
+            statDescripiron="recorded yesterday"
             statIconName="fas fa-cloud-showers-heavy"
             statIconColor="bg-orange-500"
           />
