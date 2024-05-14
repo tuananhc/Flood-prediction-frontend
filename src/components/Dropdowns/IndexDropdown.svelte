@@ -25,7 +25,7 @@
 
 <div>
   <a
-    class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+    class="hover:text-blueGray-600 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
     href="#pablo"
     bind:this="{btnDropdownRef}"
     on:click="{toggleDropdown}"
@@ -48,19 +48,13 @@
     >
       Dashboard
     </a>
-    <a
-      use:link
-      href="/admin/settings"
-      class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-    >
-      Settings
-    </a>
+
     <a
       use:link
       href="/admin/tables"
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
     >
-      Tables
+      Weather
     </a>
     <a
       use:link
@@ -69,45 +63,6 @@
     >
       Maps
     </a>
-    <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
-    <span
-      class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
-    >
-      Auth Layout
-    </span>
-    <a
-      use:link
-      href="/auth/login"
-      class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-    >
-      Login
-    </a>
-    <a
-      use:link
-      href="/auth/register"
-      class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-    >
-      Register
-    </a>
-    <div class="h-0 mx-4 my-2 border border-solid border-blueGray-100" />
-    <span
-      class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
-    >
-      No Layout
-    </span>
-    <a
-      use:link
-      href="/landing"
-      class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-    >
-      Landing
-    </a>
-    <a
-      use:link
-      href="/profile"
-      class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-    >
-      Profile
-    </a>
+    
   </div>
 </div>

@@ -9,20 +9,18 @@
       type: "bar",
       data: {
         labels: [
-          "January",
-          "February",
           "March",
           "April",
           "May",
           "June",
-          "July",
+          "July"
         ],
         datasets: [
           {
             label: new Date().getFullYear(),
             backgroundColor: "#ed64a6",
             borderColor: "#ed64a6",
-            data: [30, 78, 56, 34, 100, 45, 13],
+            data: [0, 6, 1, 0, 0],
             fill: false,
             barThickness: 8
           },
@@ -31,7 +29,7 @@
             fill: false,
             backgroundColor: "#4c51bf",
             borderColor: "#4c51bf",
-            data: [27, 68, 86, 74, 10, 4, 87],
+            data: [1, 4, 5, 5, 10],
             barThickness: 8
           }
         ]
@@ -109,10 +107,10 @@
     <div class="flex flex-wrap items-center">
       <div class="relative w-full max-w-full flex-grow flex-1">
         <h6 class="uppercase text-blueGray-400 mb-1 text-xs font-semibold">
-          Performance
+          Five month time period
         </h6>
         <h2 class="text-blueGray-700 text-xl font-semibold">
-          Total orders
+          Monthly Rainfall Alerts
         </h2>
       </div>
     </div>

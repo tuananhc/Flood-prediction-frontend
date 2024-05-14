@@ -12,12 +12,12 @@
   >
     <!-- Brand -->
     <a
-      class="text-white text-sm uppercase hidden lg:inline-block font-semibold"
+      class="reddit text-white text-sm uppercase hidden lg:inline-block font-semibold"
       href="#pablo" on:click={(e) => e.preventDefault()}
     >
-      Flood Prediction Dashboard
+      Flood Prediction Dashboard 洪水预报
     </a>
-    <!-- Form -->
+    <!-- Form 
     <form
       class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
     >
@@ -34,6 +34,7 @@
         />
       </div>
     </form>
+    -->
     <!-- User -->
     <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
       <UserDropdown />
