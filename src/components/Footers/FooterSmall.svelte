@@ -31,7 +31,7 @@
               href="https://www.creative-tim.com?ref=ns-footer-small"
               class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
             >
-              Svelte Dashboard by Creative Tim
+              <!-- Svelte Dashboard by Creative Tim -->
             </a>
           </li>
           <li>

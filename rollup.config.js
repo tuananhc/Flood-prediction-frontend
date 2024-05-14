@@ -3,6 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
+import json from '@rollup/plugin-json'
 // library that helps you import in svelte with
 // absolute paths, instead of
 // import Component  from "../../../../components/Component.svelte";
@@ -192,6 +193,9 @@ export default {
     // we will be able to say
     // import Component from "components/Component.svelte";
     aliases,
+    json({
+      compact: true
+    }),
   ],
   watch: {
     clearScreen: false,

@@ -1,0 +1,365 @@
+[
+  {
+    "station_id": 6092,
+    "xml_data": {
+      "reversegeocode": {
+        "timestamp": "Wed, 01 May 2024 01:43:41 +00:00",
+        "attribution": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "querystring": "lat=22.407895&lon=113.962891",
+        "result": {
+          "place_id": "236618508",
+          "osm_type": "way",
+          "osm_id": "219523407",
+          "ref": "San Wui Commercial Society Secondary School",
+          "lat": "22.4079823",
+          "lon": "113.9630505",
+          "boundingbox": "22.4076141,22.4083629,113.9625536,113.9635823",
+          "place_rank": "30",
+          "address_rank": "30",
+          "addressparts": {
+            "amenity": "San Wui Commercial Society Secondary School",
+            "road": "Tin King Road",
+            "residential": "Leung King Estate",
+            "suburb": "Tuen Mun North",
+            "village": "Kei Lun Wai",
+            "city": "Tuen Mun District",
+            "municipality": "New Territories",
+            "state": "Hong Kong",
+            "ISO3166-2-lvl3": "CN-HK",
+            "country": "China",
+            "country_code": "cn"
+          }
+        }
+      }
+    }
+  },
+  {
+    "station_id": 6098,
+    "xml_data": {
+      "reversegeocode": {
+        "timestamp": "Wed, 01 May 2024 01:45:18 +00:00",
+        "attribution": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "querystring": "lat=22.207417&lon=114.03757",
+        "result": {
+          "place_id": "237483318",
+          "osm_type": "way",
+          "osm_id": "164935468",
+          "ref": "Chi Ma Hang Road",
+          "lat": "22.2072990",
+          "lon": "114.0375948",
+          "boundingbox": "22.2056434,22.2072990,114.0372499,114.0378335",
+          "place_rank": "27",
+          "address_rank": "27",
+          "addressparts": {
+            "road": "Chi Ma Hang Road",
+            "suburb": "Cheung Chau",
+            "city": "Islands District",
+            "municipality": "New Territories",
+            "state": "Hong Kong",
+            "ISO3166-2-lvl3": "CN-HK",
+            "country": "China",
+            "country_code": "cn"
+          }
+        }
+      }
+    }
+  },
+  {
+    "station_id": 6121,
+    "xml_data": {
+      "reversegeocode": {
+        "timestamp": "Wed, 01 May 2024 01:46:16 +00:00",
+        "attribution": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "querystring": "lat=22.4489223&lon=114.1703806",
+        "result": {
+          "place_id": "235539134",
+          "osm_type": "way",
+          "osm_id": "191746113",
+          "ref": "Tai Po Old Market Public School (Plover Cove)",
+          "lat": "22.4490032",
+          "lon": "114.1706963",
+          "boundingbox": "22.4485689,22.4493047,114.1698716,114.1713142",
+          "place_rank": "30",
+          "address_rank": "30",
+          "addressparts": {
+            "amenity": "Tai Po Old Market Public School (Plover Cove)",
+            "house_number": "7",
+            "road": "Plover Cove Road",
+            "quarter": "Wan Tau Kok",
+            "suburb": "Tai Po Market",
+            "town": "Tai Po",
+            "city": "Tai Po District",
+            "municipality": "New Territories",
+            "state": "Hong Kong",
+            "ISO3166-2-lvl3": "CN-HK",
+            "country": "China",
+            "country_code": "cn"
+          }
+        }
+      }
+    }
+  },
+  {
+    "station_id": 6124,
+    "xml_data": {
+      "reversegeocode": {
+        "timestamp": "Wed, 01 May 2024 01:47:02 +00:00",
+        "attribution": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "querystring": "lat=22.276676&lon=114.158718",
+        "result": {
+          "place_id": "236383005",
+          "osm_type": "way",
+          "osm_id": "114976387",
+          "ref": "St. Joseph's College",
+          "lat": "22.2766161",
+          "lon": "114.1587782",
+          "boundingbox": "22.2762646,22.2772695,114.1584313,114.1591071",
+          "place_rank": "30",
+          "address_rank": "30",
+          "addressparts": {
+            "amenity": "St. Joseph's College",
+            "house_number": "7",
+            "road": "Kennedy Road",
+            "neighbourhood": "Government Hill",
+            "suburb": "Mid-Levels",
+            "city_district": "Central and Western District",
+            "city": "Hong Kong Island",
+            "state": "Hong Kong",
+            "ISO3166-2-lvl3": "CN-HK",
+            "country": "China",
+            "country_code": "cn"
+          }
+        }
+      }
+    }
+  },
+  {
+    "station_id": 6127,
+    "xml_data": {
+      "reversegeocode": {
+        "timestamp": "Wed, 01 May 2024 01:47:54 +00:00",
+        "attribution": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "querystring": "lat=22.205441&lon=114.032112",
+        "result": {
+          "place_id": "235567405",
+          "osm_type": "way",
+          "osm_id": "164935471",
+          "ref": "Cheung Chau Peak Road",
+          "lat": "22.2058025",
+          "lon": "114.0322027",
+          "boundingbox": "22.2031353,22.2074787,114.0286607,114.0328277",
+          "place_rank": "26",
+          "address_rank": "26",
+          "addressparts": {
+            "road": "Cheung Chau Peak Road",
+            "suburb": "Cheung Chau",
+            "city": "Islands District",
+            "municipality": "New Territories",
+            "state": "Hong Kong",
+            "ISO3166-2-lvl3": "CN-HK",
+            "country": "China",
+            "country_code": "cn"
+          }
+        }
+      }
+    }
+  },
+  {
+    "station_id": 6129,
+    "xml_data": {
+      "reversegeocode": {
+        "timestamp": "Wed, 01 May 2024 01:48:35 +00:00",
+        "attribution": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "querystring": "lat=22.319126&lon=114.227919",
+        "result": {
+          "place_id": "236189774",
+          "osm_type": "way",
+          "osm_id": "226591487",
+          "ref": "NLSI Lui Kwok Pat Fung College",
+          "lat": "22.3189854",
+          "lon": "114.2280394",
+          "boundingbox": "22.3187407,22.3193246,114.2275651,114.2287023",
+          "place_rank": "30",
+          "address_rank": "30",
+          "addressparts": {
+            "amenity": "NLSI Lui Kwok Pat Fung College",
+            "house_number": "102",
+            "road": "Tsui Ping Road",
+            "quarter": "Kwun Tong Mid-Levels",
+            "suburb": "Sau Mau Ping",
+            "city_district": "Kwun Tong District",
+            "city": "Kowloon",
+            "state": "Hong Kong",
+            "ISO3166-2-lvl3": "CN-HK",
+            "postcode": "000000",
+            "country": "China",
+            "country_code": "cn"
+          }
+        }
+      }
+    }
+  },
+  {
+    "station_id": 6131,
+    "xml_data": {
+      "reversegeocode": {
+        "timestamp": "Wed, 01 May 2024 01:49:17 +00:00",
+        "attribution": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "querystring": "lat=22.288555&lon=114.209716",
+        "result": {
+          "place_id": "236117346",
+          "osm_type": "relation",
+          "osm_id": "7248847",
+          "ref": "North Point Government Primary School",
+          "lat": "22.2887789",
+          "lon": "114.2093442",
+          "boundingbox": "22.2884073,22.2892808,114.2090516,114.2097609",
+          "place_rank": "30",
+          "address_rank": "30",
+          "addressparts": {
+            "amenity": "North Point Government Primary School",
+            "house_number": "888",
+            "road": "King's Road",
+            "neighbourhood": "Tsat Tsz Mui",
+            "suburb": "Quarry Bay",
+            "city_district": "Eastern District",
+            "city": "Hong Kong Island",
+            "state": "Hong Kong",
+            "ISO3166-2-lvl3": "CN-HK",
+            "postcode": "000000",
+            "country": "China",
+            "country_code": "cn"
+          }
+        }
+      }
+    }
+  },
+  {
+    "station_id": 6132,
+    "xml_data": {
+      "reversegeocode": {
+        "timestamp": "Wed, 01 May 2024 01:49:53 +00:00",
+        "attribution": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "querystring": "lat=22.272479&lon=114.184585",
+        "result": {
+          "place_id": "236035868",
+          "osm_type": "way",
+          "osm_id": "729686041",
+          "ref": "St. Paul's Secondary School",
+          "lat": "22.2724858",
+          "lon": "114.1846670",
+          "boundingbox": "22.2718975,22.2736091,114.1840481,114.1851496",
+          "place_rank": "30",
+          "address_rank": "30",
+          "addressparts": {
+            "amenity": "St. Paul's Secondary School",
+            "house_number": "18A",
+            "road": "Ventris Road",
+            "neighbourhood": "Leighton Hill",
+            "suburb": "Happy Valley",
+            "city_district": "Wan Chai District",
+            "city": "Hong Kong Island",
+            "state": "Hong Kong",
+            "ISO3166-2-lvl3": "CN-HK",
+            "country": "China",
+            "country_code": "cn"
+          }
+        }
+      }
+    }
+  },
+  {
+    "station_id": 6133,
+    "xml_data": {
+      "reversegeocode": {
+        "timestamp": "Wed, 01 May 2024 01:50:30 +00:00",
+        "attribution": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "querystring": "lat=22.363851&lon=114.139638",
+        "result": {
+          "place_id": "204672454",
+          "osm_type": "way",
+          "osm_id": "156503309",
+          "ref": "CNEC Christian College",
+          "lat": "22.3638817",
+          "lon": "114.1396775",
+          "boundingbox": "22.3634308,22.3643388,114.1389546,114.1401709",
+          "place_rank": "30",
+          "address_rank": "30",
+          "addressparts": {
+            "amenity": "CNEC Christian College",
+            "house_number": "6",
+            "road": "Lei Pui Street",
+            "residential": "Shek Lei (I) Estate",
+            "hamlet": "Shek Lei Hill Village",
+            "town": "Kwai Chung",
+            "city": "Kwai Tsing District",
+            "municipality": "New Territories",
+            "state": "Hong Kong",
+            "ISO3166-2-lvl3": "CN-HK",
+            "country": "China",
+            "country_code": "cn"
+          }
+        }
+      }
+    }
+  },
+  {
+    "station_id": 6136,
+    "xml_data": {
+      "reversegeocode": {
+        "timestamp": "Wed, 01 May 2024 01:51:13 +00:00",
+        "attribution": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "querystring": "lat=22.325667&lon=114.259521",
+        "result": {
+          "place_id": "204770178",
+          "osm_type": "way",
+          "osm_id": "273527386",
+          "ref": "Tseung Kwan O Government Secondary School",
+          "lat": "22.3256499",
+          "lon": "114.2594355",
+          "boundingbox": "22.3252043,22.3261841,114.2589146,114.2599567",
+          "place_rank": "30",
+          "address_rank": "30",
+          "addressparts": {
+            "amenity": "Tseung Kwan O Government Secondary School",
+            "house_number": "2",
+            "road": "King Yin Lane",
+            "hamlet": "Yau Yue Wan Resite Village",
+            "village": "Tseung Kwan O Village",
+            "city": "Sai Kung District",
+            "municipality": "New Territories",
+            "state": "Hong Kong",
+            "ISO3166-2-lvl3": "CN-HK",
+            "country": "China",
+            "country_code": "cn"
+          }
+        }
+      }
+    }
+  },
+  {
+    "station_id": 6143,
+    "xml_data": {
+      "reversegeocode": {
+        "result": {
+          "ref": "Tak Nga Secondary School",
+          "lat": "22.3301259",
+          "lon": "114.1752747",
+          "addressparts": {
+            "amenity": "Tak Nga Secondary School",
+            "road": "Tat Chee Avenue",
+            "residential": "Orchid Garden",
+            "suburb": "Shek Kip Mei",
+            "city_district": "Sham Shui Po District",
+            "city": "Kowloon",
+            "state": "Hong Kong",
+            "ISO3166-2-lvl3": "CN-HK",
+            "postcode": "000000",
+            "country": "China",
+            "country_code": "cn"
+          }
+        }
+      }
+    }
+  }
+]

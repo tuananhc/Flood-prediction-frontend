@@ -17,6 +17,7 @@
       dropdownPopoverShow = true;
       createPopper(btnDropdownRef, popoverDropdownRef, {
         placement: "bottom-start",
+        
       });
     }
   };
@@ -30,9 +31,10 @@
     on:click="{toggleDropdown}"
   >
     Main
+  </a>
   <div
     bind:this="{popoverDropdownRef}"
-    class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 {dropdownPopoverShow ? 'block':'hidden'}"
+    class="absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 {dropdownPopoverShow ? 'block':'hidden'}"
   >
     <span
       class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
