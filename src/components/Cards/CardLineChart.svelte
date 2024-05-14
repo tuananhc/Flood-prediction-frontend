@@ -12,25 +12,22 @@
           "January",
           "February",
           "March",
-          "April",
-          "May",
-          "June",
-          "July",
+          "April"
         ],
         datasets: [
           {
             label: new Date().getFullYear(),
-            backgroundColor: "#4c51bf",
-            borderColor: "#4c51bf",
-            data: [65, 78, 66, 44, 56, 67, 75],
+            backgroundColor: "#fff",
+            borderColor: "#fff",
+            data: [6.7, 4.1, 86, 257],
             fill: false
           },
           {
             label: new Date().getFullYear() - 1,
             fill: false,
-            backgroundColor: "#fff",
-            borderColor: "#fff",
-            data: [40, 68, 86, 74, 56, 60, 87]
+            backgroundColor: "#4c51bf",
+            borderColor: "#4c51bf",
+            data: [18.2, 1.6, 70, 78]
           }
         ]
       },
@@ -120,7 +117,7 @@
           Overview
         </h6>
         <h2 class="text-white text-xl font-semibold">
-          Rainfall in Hong Kong
+          Rainfall in Hong Kong in mm
         </h2>
       </div>
     </div>
