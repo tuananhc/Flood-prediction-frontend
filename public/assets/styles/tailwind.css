@@ -2739,6 +2739,13 @@ select {
   transform: translate(-50%, -50%);
 }
 
+.border-indigo{
+  border-color: rgb(49 46 129);
+}
+.text-indigo {
+  color: rgb(49 46 129);
+}
+
 .bg-violet-1000	{
   background-color: rgb(12, 5, 32);
 }
@@ -4361,6 +4368,11 @@ select {
 .active\:bg-blueGray-600:active {
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+
+.active\.bg-indigo-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
 
 .active\:bg-indigo-600:active {
