@@ -1,5 +1,4 @@
 {
-  "weatherStations": {
     "1005": {
       "longitude": "114.25018801890243",
       "latitude": "22.26492845",
@@ -2763,5 +2762,4 @@
       },
       "display_name": "Hong Kong Observatory, 134A, Nathan Road, Kwun Chung, Tsim Sha Tsui, Yau Tsim Mong District, Kowloon, Hong Kong, 000000, China"
     }
-  }
 }
