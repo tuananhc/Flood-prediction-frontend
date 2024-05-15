@@ -5,7 +5,10 @@
   import weatherStationAll from "./location.json";
   import Dropdown from "./Dropdown.svelte";
 
+  console.log(weatherStationAll)
+
   let circleOverlays = [];
+  let imageOverlays = [];
   const stationsMapped = [6100, 6029, 6036, 6098, 6144, 6136, 6003, 6106, 6135, 6026, 6092, 
                         6132, 6117, 6087, 6143, 6134, 6080, 6126,  6107, 6124, 6016, 1005, 6013, 
                         6050, 1016, 1017, 6015, 6022, 3002,6014, 6067, 6081, 6140, 6141, 6091, 6030, 6046,
@@ -41,6 +44,22 @@
     'Sai Kung District', 'Wan Chai District', 'Yau Tsim Mong District'
   ]
 
+  const DISTRICTS_ENAME = [
+    'EASTERN', 'TSUEN WAN', 'TUEN MUN', 'KOWLOON CITY', 'YUEN LONG', 'SHA TIN', 
+    'KWAI TSING', 'TAI PO', 'SHAM SHUI PO', 'ISLANDS', 'SOUTHERN', 'NORTH', 
+    'KWUN TONG', 'WONG TAI SIN', 'CENTRAL & WESTERN', 'SAI KUNG', 'WAN CHAI', 'YAU TSIM MONG'
+  ]
+
+
+  var districtSelection = [];
+  for (var i = 0; i < DISTRICTS.length; i ++) {
+    districtSelection.push({
+      name: DISTRICTS[i],
+      ename: DISTRICTS_ENAME[i],
+      selected: false
+    })
+  }
+
   function loadJSONFile(filename, callback) {   
     var xmlobj = new XMLHttpRequest();
     xmlobj.overrideMimeType("application/json");
@@ -56,6 +75,8 @@
 
   // init google maps
   let map;
+  const infoWindow = new google.maps.InfoWindow();
+
   onMount(async () => {
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
@@ -118,15 +139,6 @@
  
     map = new Map(document.getElementById("map-canvas"), mapOptions);
 
-
-    const contentString =
-      '<div class="info-window-content"><h2>Notus Svelte</h2>' +
-      "<p>A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</p></div>";
-
-    const infowindow = new google.maps.InfoWindow({
-      content: contentString,
-    });
-
     loadJSONFile("/assets/HONG_KONG.geojson", function(response) {
       var district = JSON.parse(response);
       console.log(district)
@@ -134,34 +146,40 @@
       map.data.addGeoJson(district);
       map.data.setStyle(function (feature) {
         return {
-          fillColor: "#00ffff", //"#" + myRainbow.colorAt(Math.floor(Math.random() * 100)),
+          fillColor: "#FFC100", //"#" + myRainbow.colorAt(Math.floor(Math.random() * 100)),
           strokeWeight: 0.5,
           fillOpacity: 0
         }
       });
     });
 
+    map.data.addListener('click', function(event) {
+      for (var i = 0; i < districtSelection.length; i ++) {
+        if (districtSelection[i].ename === event.feature.getProperty('ENAME')) {
+          districtSelection[i].selected = !districtSelection[i].selected;
+        }
+      }
+      handleDistrictSelection();
+    });
   });
 
-  var districtSelection = [];
-  for (var i = 0; i < DISTRICTS.length; i ++) {
-    districtSelection.push({
-      name: DISTRICTS[i],
-      selected: false
-    })
-  }
-
-  
   function handleDistrictSelection() {
     map.data.revertStyle();
     let stations = []
-    districtSelection.forEach((district) =>{
+    districtSelection.forEach((district) => {
       if (district.selected){
+        console.log(district.name)
+        map.data.forEach(function (feature) {
+          if (feature.getProperty('ENAME') === district.ename) {
+            map.data.overrideStyle(feature, { fillOpacity: 0.5 })
+          }
+        });
         for (const station in weatherStationAll){
           if (weatherStationAll[station].address.municipality){
             if (weatherStationAll[station].address.city.includes(district.name)){
               stations.push({
                 id: station,
+                title: weatherStationAll[station].address.amenity,
                 longitude: weatherStationAll[station].longitude,
                 latitude: weatherStationAll[station].latitude
               })
@@ -170,6 +188,7 @@
             if (weatherStationAll[station].address.city_district.includes(district.name)){
               stations.push({
                 id: station,
+                title: weatherStationAll[station].address.amenity,
                 longitude: weatherStationAll[station].longitude,
                 latitude: weatherStationAll[station].latitude
               })
@@ -194,32 +213,72 @@
     circleOverlays.forEach((circle) => {
       circle.setMap(null);
     });
+
+    imageOverlays.forEach((image) => {
+      image.setMap(null);
+    });
     
     // Clear the array
     circleOverlays = [];
+    imageOverlays = [];
 
     // Add circle overlay
     stations.forEach((station) =>{
+      console.log(station);
       const myLatlng = new google.maps.LatLng(station.latitude, station.longitude);
-      let color = myRainbow.colorAt(20)
+      let color = "#" + myRainbow.colorAt(20)
       const circle = new google.maps.Circle({
         strokeColor: color,
         strokeOpacity: 0.8,
         strokeWeight: 2,
         fillColor: color,
-        fillOpacity: 0.35,
+        fillOpacity: 0.1,
         map,
         center: myLatlng,
         radius: 500,
       });
+
+      const iconImage = document.createElement("img");
+      iconImage.src = "/assets/mapIcons/signal-tower (2).png";
+      iconImage.height = 30;
+      iconImage.width = 30;
+
+      const newMarker = new google.maps.marker.AdvancedMarkerElement({
+        map,
+        position: new google.maps.LatLng(station["latitude"], station["longitude"]),
+        content: iconImage,
+        title: station.title
+      })
+
+      newMarker.addListener("click", ({ domEvent, latLng }) => {
+        const { target } = domEvent;
+
+        var title = (newMarker.title != "") ? newMarker.title : "Weather station";
+
+        const infoWindowContent = `
+          <div>
+            <h2>${newMarker.title}</h2>
+            <p style="background-color: red">
+              High chances of flood
+            </p>
+          </div>
+        `
+
+        infoWindow.close();
+        infoWindow.setContent(infoWindowContent);
+        infoWindow.open(newMarker.map, newMarker);
+        infoWindow.focus();
+      });
+
       circleOverlays.push(circle);
+      imageOverlays.push(newMarker);
     })
   }
 
   function selectAll() {
     districtSelection = districtSelection.map(district => {
       return {
-        name: district.name,
+        ...district,
         selected: true
       }
     })
@@ -227,16 +286,27 @@
     map.data.forEach(function (feature) {
       map.data.overrideStyle(feature, { fillOpacity: 0.5 })
     });
+
+    var stations = [];
+    for (const station in weatherStationAll){
+      stations.push({
+        id: station,
+        longitude: weatherStationAll[station].longitude,
+        latitude: weatherStationAll[station].latitude
+      })
+    }
+    station_rainfall(stations);
   }
 
   function deselectAll() {
     districtSelection = districtSelection.map(district => {
       return {
-        name: district.name,
+        ...district,
         selected: false
       }
     })
     map.data.revertStyle();
+    station_rainfall([]);
   }
 
 </script>
