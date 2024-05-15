@@ -245,7 +245,7 @@
     <div class="flex-flow:column p-3"> 
      <DateDropdown />
     </div>
-    
+
   </div>
   <div
     id="map-canvas"
