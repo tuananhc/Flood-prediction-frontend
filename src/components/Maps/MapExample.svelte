@@ -22,7 +22,7 @@
   var myRainbow = new Rainbow();
   myRainbow.setSpectrum(
     "#00ffff",
-    "#00bfff",
+    // "#00bfff",
     // "#007fff",
     // "#003fff",
     // "#0000ff",
@@ -32,12 +32,14 @@
     // "#00007f",
     // "#3f005b",
     // "#7f003f",
-    "#c1001f",
+    // "#c1001f",
     "#ff0000",
-    // "green",
-    // "orange"
-    // "red"
   );
+
+  var rainfall = []
+  for (var i = 0; i < 18; i ++) {
+    rainfall.push(Math.random() * 100);
+  }
 
   // check user permission
   var trackingLocationPermission = false;
@@ -170,18 +172,36 @@
       //})
     }
 
+    var maxRainfall = Math.max(...rainfall);
+    var minRainfall = Math.min(...rainfall);
+
     loadJSONFile("/assets/HONG_KONG.geojson", function(response) {
       var district = JSON.parse(response);
-      console.log(district)
-      
       map.data.addGeoJson(district);
       map.data.setStyle(function (feature) {
+        var rainfallIndex = Math.floor((rainfall[feature.getProperty("ID") - 1] - minRainfall) / (maxRainfall - minRainfall) * 100);
+
         return {
-          fillColor: "#00ffff", //"#" + myRainbow.colorAt(Math.floor(Math.random() * 100)),
+          fillColor: "#" + myRainbow.colorAt(rainfallIndex), //"#" + myRainbow.colorAt(Math.floor(Math.random() * 100)),
           strokeWeight: 0.5,
           fillOpacity: 0
         }
       });
+    });
+
+    map.data.addListener('click', function(event) {
+      for (var i = 0; i < districtSelection.length; i ++) {
+        if (districtSelection[i].name === event.feature.getProperty('ENAME')) {
+          if (districtSelection[i].selected) {
+            map.data.overrideStyle(event.feature, { fillOpacity: 0 })
+            districtSelection[i].selected = false;
+
+          } else {
+            map.data.overrideStyle(event.feature, { fillOpacity: 0.5 })
+            districtSelection[i].selected = true;
+          }
+        }
+      }
     });
 
   });
@@ -232,6 +252,8 @@
 </script>
 
 <div class="block w-full overflow-x-auto">
+  <div style="height: 20px; width: 1000px; background: linear-gradient(to right, #00ffff, #ff0000);"></div>
+  <Geolocation getPosition bind:coords />
   <div class="grid-2 w-full bg-transparent border-collapse">
     <div class="flex-flow:column p-3"> 
       <Dropdown 
