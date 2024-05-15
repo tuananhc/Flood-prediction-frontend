@@ -4243,6 +4243,7 @@ select {
   --tw-text-opacity: 1;
   color: rgb(203 213 225 / var(--tw-text-opacity));
 }
+
 .hover\:text-indigo-900:hover {
   --tw-bg-opacity: 1;
   color: rgb(49 46 129 / var(--tw--opacity));
@@ -4380,6 +4381,12 @@ select {
 
 .hover\:focus\:text-center:focus:hover {
   text-align: center;
+}
+
+.active\:bg-indigo-500:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 46 129/ var(--tw-bg-opacity));
+  color: white;
 }
 
 .active\:bg-blueGray-50:active {

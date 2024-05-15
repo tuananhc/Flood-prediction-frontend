@@ -4,6 +4,8 @@
   import weatherStations from "./weatherStations.json";
   import weatherStationAll from "./location.json";
   import Dropdown from "./Dropdown.svelte";
+  import DateDropdown from "components/Dropdowns/DateDropdown.svelte";
+  import {DISTRICTS} from "../../components/constant"
 
   console.log(weatherStationAll)
 
@@ -36,13 +38,7 @@
     // "red"
   );
 
-  const DISTRICTS = [
-    'Eastern District', 'Tsuen Wan District', 'Tuen Mun District', 'Kowloon City District',
-    'Yuen Long District', 'Sha Tin District', 'Kwai Tsing District', 'Tai Po District',
-    'Sham Shui Po District', 'Islands District', 'Southern District', 'North District',
-    'Kwun Tong District', 'Wong Tai Sin District', 'Central and Western District',
-    'Sai Kung District', 'Wan Chai District', 'Yau Tsim Mong District'
-  ]
+
 
   const DISTRICTS_ENAME = [
     'EASTERN', 'TSUEN WAN', 'TUEN MUN', 'KOWLOON CITY', 'YUEN LONG', 'SHA TIN', 
@@ -311,17 +307,23 @@
 
 </script>
 
-<div style="display: flex; flex: 1; flex-direction: column">
-  <div style="display: flex; flex: 1; height: 50px; justify-content: flex-start;">
-    <Dropdown 
-      districts={districtSelection} 
-      onChange={handleDistrictSelection}
-      onSelectAll={selectAll}
-      onDeselectAll={deselectAll}
-    />
+<div class="block w-full overflow-x-auto">
+  <div class="grid-2 w-full bg-transparent border-collapse">
+    <div class="flex-flow:column p-3"> 
+      <Dropdown 
+        districts={districtSelection} 
+        onChange={handleDistrictSelection}
+        onSelectAll={selectAll}
+        onDeselectAll={deselectAll}
+      />
+    </div>
+    <div class="flex-flow:column p-3"> 
+     <DateDropdown />
+    </div>
+
   </div>
   <div
     id="map-canvas"
-    style="width: 100%; height: 1000px"
+    style="width: 100%; height: 600px"
   ></div>
 </div>

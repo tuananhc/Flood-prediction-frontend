@@ -45,11 +45,11 @@
     }
   }
 </script>
-
-<div class='ml-3'>
+<div class='ml-3 p-4'>
   <a
-    class="w-40 border border-gray-200 text-gray-500 text-sm px-6 py-3 rounded hover:text-indigo-900 flex items-center text-center font-bold justify-center"
+    class="w-40 border border-gray-200 text-gray-500 text-sm px-6 py-3 shadow rounded  active:bg-indigo-500 hover:text-indigo-900 flex items-center text-center font-bold justify-center"
     href="#pablo"
+    
     bind:this="{btnDropdownRef}"
     on:click="{toggleDropdown}"
   >

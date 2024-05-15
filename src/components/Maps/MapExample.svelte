@@ -4,6 +4,7 @@
   import weatherStations from "./weatherStations.json";
   import weatherStationAll from "./location.json";
   import Dropdown from "./Dropdown.svelte";
+  import DateDropdown from "components/Dropdowns/DateDropdown.svelte";
   import Geolocation from "svelte-geolocation";
 
   let coords = [];
@@ -263,6 +264,10 @@
         onDeselectAll={deselectAll}
       />
     </div>
+    <div class="flex-flow:column p-3"> 
+     <DateDropdown />
+    </div>
+
   </div>
   <div
     id="map-canvas"

@@ -5,7 +5,7 @@
   import FooterAdmin from "components/Footers/FooterAdmin.svelte";
 
   // main map component placeholder
-  import MapExample from "components/Maps/Map.svelte";
+  import Map from "components/Maps/Map.svelte";
  
   // card components
   import CardTable from "components/Cards/CardTable.svelte";
@@ -22,7 +22,7 @@
         <div
           class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
           >
-          <div class="pt-6 px-6 pb-3">
+          <div class="pt-6 px-6 pb-3 ">
             <h6 class="uppercase text-blueGray-400 mb-1 text-xs font-semibold">
               Showing Flood Risk Per District
             </h6>
@@ -30,12 +30,14 @@
               Hong Kong City
             </h2>
           </div>
-          <MapExample />
+          <Map />
         </div>
       </div>
+      <!--
       <div class="w-full px-4">
         <CardPredict />
       </div>
+      -->
       <div class="w-full mb-12 px-4">
         <CardTable />
       </div>
