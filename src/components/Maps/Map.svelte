@@ -5,7 +5,6 @@
   import weatherStationAll from "./location.json";
   import Dropdown from "./Dropdown.svelte";
   import DateDropdown from "components/Dropdowns/DateDropdown.svelte";
-  import {DISTRICTS} from "../../components/constant"
 
   console.log(weatherStationAll)
 
@@ -38,14 +37,19 @@
     // "red"
   );
 
-
+  const DISTRICTS = [
+    'Eastern District', 'Tsuen Wan District', 'Tuen Mun District', 'Kowloon City District',
+    'Yuen Long District', 'Sha Tin District', 'Kwai Tsing District', 'Tai Po District',
+    'Sham Shui Po District', 'Islands District', 'Southern District', 'North District',
+    'Kwun Tong District', 'Wong Tai Sin District', 'Central and Western District',
+    'Sai Kung District', 'Wan Chai District', 'Yau Tsim Mong District'
+  ]
 
   const DISTRICTS_ENAME = [
     'EASTERN', 'TSUEN WAN', 'TUEN MUN', 'KOWLOON CITY', 'YUEN LONG', 'SHA TIN', 
     'KWAI TSING', 'TAI PO', 'SHAM SHUI PO', 'ISLANDS', 'SOUTHERN', 'NORTH', 
     'KWUN TONG', 'WONG TAI SIN', 'CENTRAL & WESTERN', 'SAI KUNG', 'WAN CHAI', 'YAU TSIM MONG'
   ]
-
 
   var districtSelection = [];
   for (var i = 0; i < DISTRICTS.length; i ++) {
@@ -253,10 +257,10 @@
 
         const infoWindowContent = `
           <div>
-            <h2>${newMarker.title}</h2>
-            <p style="background-color: red">
+            <h2>${title}</h2>
+            <div style="display: inline; background-color: red">
               High chances of flood
-            </p>
+            </div>
           </div>
         `
 
