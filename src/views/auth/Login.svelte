@@ -1,6 +1,6 @@
 <script>
   import { link } from "svelte-routing";
-  import { userLogin } from "../api/user";
+  import { userLogin } from "../../api/user";
 
   let details = {
     email: "",
