@@ -22,7 +22,7 @@
         <div
           class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
           >
-          <div class="pt-6 px-6 pb-3">
+          <div class="pt-6 px-6 pb-3 ">
             <h6 class="uppercase text-blueGray-400 mb-1 text-xs font-semibold">
               Showing Flood Risk Per District
             </h6>
