@@ -1,5 +1,4 @@
 <script>
-  import { link } from "svelte-routing";
   // library for creating dropdown menu appear on click
   import { createPopper } from "@popperjs/core";
 
@@ -47,28 +46,30 @@
   }
 </script>
 
-<div style=" border: 1px solid black">
+<div class='ml-3'>
   <a
-    class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+    class="w-40 border border-gray-200 text-gray-500 text-sm px-6 py-3 rounded hover:text-indigo-900 flex items-center text-center font-bold justify-center"
     href="#pablo"
     bind:this="{btnDropdownRef}"
     on:click="{toggleDropdown}"
   >
-    Regions
+    Select District
   </a>
   <div
     bind:this="{popoverDropdownRef}"
-    class="absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 {dropdownPopoverShow ? 'block':'hidden'}"
+    class="h-500 overflow-y-scroll absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 {dropdownPopoverShow ? 'block':'hidden'}"
   >
     <ul>
-      <li class="p-4">
-        <input type="checkbox" bind:checked={selectAll} on:change={handleSelectAll}/>
-        <span>All</span>
+      <li class="p-3">
+        <input type="checkbox"  class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-indigo transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:accent-indigo checked:bg-indigo-900 checked:before:bg-indigo-900 hover:before:opacity-10"
+        bind:checked={selectAll} on:change={handleSelectAll} />
+        <span class="ml-3">All</span>
       </li>
       {#each districts as district}
-        <li class="p-4">
-          <input type="checkbox" bind:checked={district.selected} on:change={onChange}/>
-          <span>{capitalizeFirstLetter(district.name)}</span>
+        <li class="p-3">
+          <input type="checkbox"  class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-indigo transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-indigo checked:bg-indigo-900 checked:before:bg-indigo-900 hover:before:opacity-10"
+          bind:checked={district.selected} on:change={onChange}/>
+          <span class="ml-3">{capitalizeFirstLetter(district.name)}</span>
         </li>
       {/each}
     </ul>

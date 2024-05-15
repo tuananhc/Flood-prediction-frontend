@@ -4,6 +4,9 @@
   import weatherStations from "./weatherStations.json";
   import weatherStationAll from "./location.json";
   import Dropdown from "./Dropdown.svelte";
+  import Geolocation from "svelte-geolocation";
+
+  let coords = [];
 
   console.log(weatherStations);
   console.log("test")
@@ -11,8 +14,8 @@
 
   const stationsMapped = [6100, 6029, 6036, 6098, 6144, 6136, 6003, 6106, 6135, 6026, 6092, 
                         6132, 6117, 6087, 6143, 6134, 6080, 6126,  6107, 6124, 6016, 1005, 6013, 
-                        6050, 1016, 1017, 6015, 6022, 3002,6014, 6067, 6081, 6140, 6141, 6091, 6030, 6046,
-                        6076, 6083, 1013, 6072, 6005, 6137,6090, 3000, 6145, 6111, 6995, 1006, 6108, 1010, 1009,
+                        6050, 1016, 1017, 6015, 6022, 3002, 6014, 6067, 6081, 6140, 6141, 6091, 6030, 6046,
+                        6076, 6083, 1013, 6072, 6005, 6137, 6090, 3000, 6145, 6111, 6995, 1006, 6108, 1010, 1009,
                         6146, 6148, 6044, 9913, 6078, 6019, 6039, 6073, 6063, 6075, 6116, 6109, 6012, 6049,
                         6129, 6139, 6095]
   
@@ -35,6 +38,14 @@
     // "orange"
     // "red"
   );
+
+  // check user permission
+  var trackingLocationPermission = false;
+  navigator.permissions.query({name:'geolocation'}).then(function(result) {
+    if (result.state === "granted") {
+      trackingLocationPermission = true;
+    }
+  });
 
   const DISTRICTS = [
     'WONG TAI SIN', 'KOWLOON CITY', 'KWUN TONG', 
@@ -119,29 +130,19 @@
         strictBounds: false,
       }
     };
+
     map = new Map(document.getElementById("map-canvas"), mapOptions);
 
-    const marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      animation: google.maps.Animation.DROP,
-      title: "Hello World!",
-    });
+    if (trackingLocationPermission) {
+      const marker = new google.maps.Marker({
+        position: new google.maps.LatLng(coords[1], coords[0]),
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title: "Hello World!",
+      });
+    }
 
-    const contentString =
-      '<div class="info-window-content"><h2>Notus Svelte</h2>' +
-      "<p>A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</p></div>";
-
-    const infowindow = new google.maps.InfoWindow({
-      content: contentString,
-    });
-
-    google.maps.event.addListener(marker, "click", function () {
-      infowindow.open(map, marker);
-    });
-    // Create Markers based on location.json and the stationsMapped const
-    //TODO: Add clickable event like above
-    for (var i = 0; i< stationsMapped.length; i++){
+    for (var i = 0; i < weatherStations.length; i ++) {
       const iconImage = document.createElement("img");
       iconImage.src = "/assets/mapIcons/signal-tower (2).png";
       iconImage.height = 30;
@@ -192,7 +193,6 @@
       selected: false
     })
   }
-
   
   function handleDistrictSelection() {
     map.data.revertStyle();
@@ -229,20 +229,21 @@
     })
     map.data.revertStyle();
   }
-
 </script>
 
-<div style="display: flex; flex: 1; flex-direction: column">
-  <div style="display: flex; flex: 1; height: 50px; justify-content: flex-start;">
-    <Dropdown 
-      districts={districtSelection} 
-      onChange={handleDistrictSelection}
-      onSelectAll={selectAll}
-      onDeselectAll={deselectAll}
-    />
+<div class="block w-full overflow-x-auto">
+  <div class="grid-2 w-full bg-transparent border-collapse">
+    <div class="flex-flow:column p-3"> 
+      <Dropdown 
+        districts={districtSelection} 
+        onChange={handleDistrictSelection}
+        onSelectAll={selectAll}
+        onDeselectAll={deselectAll}
+      />
+    </div>
   </div>
   <div
     id="map-canvas"
-    style="width: 100%; height: 1000px"
+    style="width: 100%; height: 600px"
   ></div>
 </div>
