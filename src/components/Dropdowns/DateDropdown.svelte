@@ -21,15 +21,14 @@
     }
   };
 </script>
-
 <div>
   <!--<DateInput bind:value={date} />-->
 </div>
   <div>
-    Date:
-    <button class="border border-gray-200 text-gray-500 text-sm  ml-3 px-6 py-3 rounded shadow outline-none focus:outline-none mr-1 mb-1  active:bg-indigo-500 ease-linear transition-all duration-150" type="button" bind:this="{btnDropdownRef}"
+  
+    <button class="border border-gray-200 text-gray-500 text-sm  ml-3 px-6 py-3 rounded shadow outline-none hover:text-indigo-900 focus:outline-none mr-1 mb-1 font-bold w-40 active:bg-indigo-500 ease-linear transition-all duration-150" type="button" bind:this="{btnDropdownRef}"
     on:click="{toggleDropdown}">
-      Choose Date...
+      Choose Date
   </button>
 
   <div

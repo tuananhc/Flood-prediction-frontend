@@ -33,9 +33,11 @@
           <MapExample />
         </div>
       </div>
+      <!--
       <div class="w-full px-4">
         <CardPredict />
       </div>
+      -->
       <div class="w-full mb-12 px-4">
         <CardTable />
       </div>
