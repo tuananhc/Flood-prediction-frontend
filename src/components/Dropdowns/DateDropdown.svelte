@@ -1,8 +1,9 @@
 <script>
-  // library for creating dropdown menu appear on click
+  // import
   import { createPopper } from "@popperjs/core";
-  // const image = "../assets/img/user.png";
-
+  // import { DateInput } from 'date-picker-svelte'
+	// let date = new Date();
+ 
   // core components
   let dropdownPopoverShow = false;
   let btnDropdownRef;
@@ -22,10 +23,13 @@
 </script>
 
 <div>
-  District:
-  <button class="text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 bg-blueGray-600 active:bg-indigo-800 ease-linear transition-all duration-150" type="button" bind:this="{btnDropdownRef}"
-      on:click="{toggleDropdown}">
-      Choose District
+  <!--<DateInput bind:value={date} />-->
+</div>
+  <div>
+    Date:
+    <button class="border border-gray-200 text-gray-500 text-sm  ml-3 px-6 py-3 rounded shadow outline-none focus:outline-none mr-1 mb-1  active:bg-indigo-500 ease-linear transition-all duration-150" type="button" bind:this="{btnDropdownRef}"
+    on:click="{toggleDropdown}">
+      Choose Date...
   </button>
 
   <div

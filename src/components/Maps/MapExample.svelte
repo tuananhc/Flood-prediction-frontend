@@ -2,13 +2,23 @@
   import { onMount } from "svelte";
   import Rainbow from "rainbowvis.js";
   import weatherStations from "./weatherStations.json";
+  import weatherStationAll from "./location.json";
   import Dropdown from "./Dropdown.svelte";
   import Geolocation from "svelte-geolocation";
 
   let coords = [];
 
   console.log(weatherStations);
+  console.log("test")
+  console.log(weatherStationAll);
 
+  const stationsMapped = [6100, 6029, 6036, 6098, 6144, 6136, 6003, 6106, 6135, 6026, 6092, 
+                        6132, 6117, 6087, 6143, 6134, 6080, 6126,  6107, 6124, 6016, 1005, 6013, 
+                        6050, 1016, 1017, 6015, 6022, 3002,6014, 6067, 6081, 6140, 6141, 6091, 6030, 6046,
+                        6076, 6083, 1013, 6072, 6005, 6137,6090, 3000, 6145, 6111, 6995, 1006, 6108, 1010, 1009,
+                        6146, 6148, 6044, 9913, 6078, 6019, 6039, 6073, 6063, 6075, 6116, 6109, 6012, 6049,
+                        6129, 6139, 6095]
+  
   var myRainbow = new Rainbow();
   myRainbow.setSpectrum(
     "#00ffff",
@@ -134,18 +144,30 @@
 
     for (var i = 0; i < weatherStations.length; i ++) {
       const iconImage = document.createElement("img");
-
       iconImage.src = "/assets/mapIcons/signal-tower (2).png";
-      iconImage.height = 50;
-      iconImage.width = 50;
+      iconImage.height = 30;
+      iconImage.width = 30;
 
-      var address = weatherStations[i]["xml_data"]["reversegeocode"]["result"];
 
+      var station = weatherStationAll.weatherStations[stationsMapped[i]];
+      console.log(station)
       const newMarker = new google.maps.marker.AdvancedMarkerElement({
         map,
-        position: new google.maps.LatLng(address["lat"], address["lon"]),
+        position: new google.maps.LatLng(station["latitude"], station["longitude"]),
         content: iconImage,
-      });
+        title: station.display_name
+      })
+      // https://developers.google.com/maps/documentation/javascript/advanced-markers/accessible-markers#javascript
+      //newMarker.addListener("click", ({domEvent, latLng}) => {
+      //  const { target} = domEvent;
+      //  // Add rainfall cloning here
+      //  const infoWindowContent = "<div><h3>" + station.display_name + "</h3></div>";
+      //  const infoWindow = new google.maps.InfoWindow()
+      //  
+      //  infowindow.close();
+      //  infoWindow.setContent(infoWindowContent);
+      //  infoWindow.open(marker.map, marker);
+      //})
     }
 
     loadJSONFile("/assets/HONG_KONG.geojson", function(response) {
@@ -209,18 +231,19 @@
   }
 </script>
 
-<div style="display: flex; flex: 1; flex-direction: column">
-  <Geolocation getPosition bind:coords />
-  <div style="display: flex; flex: 1; height: 50px; justify-content: flex-start;">
-    <Dropdown 
-      districts={districtSelection} 
-      onChange={handleDistrictSelection}
-      onSelectAll={selectAll}
-      onDeselectAll={deselectAll}
-    />
+<div class="block w-full overflow-x-auto">
+  <div class="grid-2 w-full bg-transparent border-collapse">
+    <div class="flex-flow:column p-3"> 
+      <Dropdown 
+        districts={districtSelection} 
+        onChange={handleDistrictSelection}
+        onSelectAll={selectAll}
+        onDeselectAll={deselectAll}
+      />
+    </div>
   </div>
   <div
     id="map-canvas"
-    style="width: 100%; height: 1000px"
+    style="width: 100%; height: 600px"
   ></div>
 </div>
