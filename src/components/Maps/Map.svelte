@@ -4,7 +4,7 @@
   import weatherStations from "./weatherStations.json";
   import weatherStationAll from "./location.json";
   import Dropdown from "./Dropdown.svelte";
-  import {DISTRICTS} from "../../../public/assets/constant"
+  import {DISTRICTS} from "../../components/constant"
 
   let circleOverlays = [];
   const stationsMapped = [6100, 6029, 6036, 6098, 6144, 6136, 6003, 6106, 6135, 6026, 6092, 
