@@ -10,7 +10,8 @@ const axiosAPI = axios.create({
 // implement a method to execute all the request from here.
 const apiRequest = (method, url, request) => {
     const headers = {
-        "content-type": "application/json; charset=utf-8"
+        "content-type": "application/json; charset=utf-8",
+        "token": localStorage.getItem("token")
         // Add your authorization here
         // Authorization: `Bearer ${localStorage.getItem("token")}`
     };
