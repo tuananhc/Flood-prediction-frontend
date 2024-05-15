@@ -71,7 +71,7 @@
     <div>
       <div class="pl-3 pb-3">
         <h2 class="text-white text-xl font-semibold">
-          Kowloon City
+          Hong Kong
         </h2>
         <h6 class="uppercase text-blueGray-100 mb-1 text-xs font-semibold">
           Weather Forecast
