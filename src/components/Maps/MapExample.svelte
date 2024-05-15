@@ -209,17 +209,19 @@
 
 </script>
 
-<div style="display: flex; flex: 1; flex-direction: column">
-  <div style="display: flex; flex: 1; height: 50px; justify-content: flex-start;">
-    <Dropdown 
-      districts={districtSelection} 
-      onChange={handleDistrictSelection}
-      onSelectAll={selectAll}
-      onDeselectAll={deselectAll}
-    />
+<div class="block w-full overflow-x-auto">
+  <div class="grid-2 w-full bg-transparent border-collapse">
+    <div class="flex-flow:column p-3"> 
+      <Dropdown 
+        districts={districtSelection} 
+        onChange={handleDistrictSelection}
+        onSelectAll={selectAll}
+        onDeselectAll={deselectAll}
+      />
+    </div>
   </div>
   <div
     id="map-canvas"
-    style="width: 100%; height: 1000px"
+    style="width: 100%; height: 600px"
   ></div>
 </div>
