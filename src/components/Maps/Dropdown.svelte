@@ -1,5 +1,4 @@
 <script>
-  import { link } from "svelte-routing";
   // library for creating dropdown menu appear on click
   import { createPopper } from "@popperjs/core";
 
@@ -54,7 +53,7 @@
     bind:this="{btnDropdownRef}"
     on:click="{toggleDropdown}"
   >
-    Select Regions
+    Select District
   </a>
   <div
     bind:this="{popoverDropdownRef}"
@@ -76,3 +75,4 @@
     </ul>
   </div>
 </div>
+
