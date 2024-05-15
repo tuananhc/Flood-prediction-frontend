@@ -3,6 +3,9 @@
   import Rainbow from "rainbowvis.js";
   import weatherStations from "./weatherStations.json";
   import Dropdown from "./Dropdown.svelte";
+  import Geolocation from "svelte-geolocation";
+
+  let coords = [];
 
   console.log(weatherStations);
 
@@ -25,6 +28,14 @@
     // "orange"
     // "red"
   );
+
+  // check user permission
+  var trackingLocationPermission = false;
+  navigator.permissions.query({name:'geolocation'}).then(function(result) {
+    if (result.state === "granted") {
+      trackingLocationPermission = true;
+    }
+  });
 
   const DISTRICTS = [
     'WONG TAI SIN', 'KOWLOON CITY', 'KWUN TONG', 
@@ -109,26 +120,17 @@
         strictBounds: false,
       }
     };
+
     map = new Map(document.getElementById("map-canvas"), mapOptions);
 
-    const marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      animation: google.maps.Animation.DROP,
-      title: "Hello World!",
-    });
-
-    const contentString =
-      '<div class="info-window-content"><h2>Notus Svelte</h2>' +
-      "<p>A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</p></div>";
-
-    const infowindow = new google.maps.InfoWindow({
-      content: contentString,
-    });
-
-    google.maps.event.addListener(marker, "click", function () {
-      infowindow.open(map, marker);
-    });
+    if (trackingLocationPermission) {
+      const marker = new google.maps.Marker({
+        position: new google.maps.LatLng(coords[1], coords[0]),
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title: "Hello World!",
+      });
+    }
 
     for (var i = 0; i < weatherStations.length; i ++) {
       const iconImage = document.createElement("img");
@@ -169,7 +171,6 @@
       selected: false
     })
   }
-
   
   function handleDistrictSelection() {
     map.data.revertStyle();
@@ -206,10 +207,10 @@
     })
     map.data.revertStyle();
   }
-
 </script>
 
 <div style="display: flex; flex: 1; flex-direction: column">
+  <Geolocation getPosition bind:coords />
   <div style="display: flex; flex: 1; height: 50px; justify-content: flex-start;">
     <Dropdown 
       districts={districtSelection} 
