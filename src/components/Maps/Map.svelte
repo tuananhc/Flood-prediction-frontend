@@ -4,6 +4,7 @@
   import weatherStations from "./weatherStations.json";
   import weatherStationAll from "./location.json";
   import Dropdown from "./Dropdown.svelte";
+  import {DISTRICTS} from "../../../public/assets/constant"
 
   let circleOverlays = [];
   const stationsMapped = [6100, 6029, 6036, 6098, 6144, 6136, 6003, 6106, 6135, 6026, 6092, 
@@ -33,13 +34,7 @@
     // "red"
   );
 
-  const DISTRICTS = [
-    'Eastern District', 'Tsuen Wan District', 'Tuen Mun District', 'Kowloon City District',
-    'Yuen Long District', 'Sha Tin District', 'Kwai Tsing District', 'Tai Po District',
-    'Sham Shui Po District', 'Islands District', 'Southern District', 'North District',
-    'Kwun Tong District', 'Wong Tai Sin District', 'Central and Western District',
-    'Sai Kung District', 'Wan Chai District', 'Yau Tsim Mong District'
-  ]
+
 
   function loadJSONFile(filename, callback) {   
     var xmlobj = new XMLHttpRequest();
