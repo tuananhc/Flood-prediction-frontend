@@ -4,6 +4,9 @@
   import weatherStations from "./weatherStations.json";
   import weatherStationAll from "./location.json";
   import Dropdown from "./Dropdown.svelte";
+  import Geolocation from "svelte-geolocation";
+
+  let coords = [];
 
   console.log(weatherStations);
   console.log("test")
@@ -35,6 +38,14 @@
     // "orange"
     // "red"
   );
+
+  // check user permission
+  var trackingLocationPermission = false;
+  navigator.permissions.query({name:'geolocation'}).then(function(result) {
+    if (result.state === "granted") {
+      trackingLocationPermission = true;
+    }
+  });
 
   const DISTRICTS = [
     'WONG TAI SIN', 'KOWLOON CITY', 'KWUN TONG', 
@@ -119,29 +130,19 @@
         strictBounds: false,
       }
     };
+
     map = new Map(document.getElementById("map-canvas"), mapOptions);
 
-    const marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      animation: google.maps.Animation.DROP,
-      title: "Hello World!",
-    });
+    if (trackingLocationPermission) {
+      const marker = new google.maps.Marker({
+        position: new google.maps.LatLng(coords[1], coords[0]),
+        map: map,
+        animation: google.maps.Animation.DROP,
+        title: "Hello World!",
+      });
+    }
 
-    const contentString =
-      '<div class="info-window-content"><h2>Notus Svelte</h2>' +
-      "<p>A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</p></div>";
-
-    const infowindow = new google.maps.InfoWindow({
-      content: contentString,
-    });
-
-    google.maps.event.addListener(marker, "click", function () {
-      infowindow.open(map, marker);
-    });
-    // Create Markers based on location.json and the stationsMapped const
-    //TODO: Add clickable event like above
-    for (var i = 0; i< stationsMapped.length; i++){
+    for (var i = 0; i < weatherStations.length; i ++) {
       const iconImage = document.createElement("img");
       iconImage.src = "/assets/mapIcons/signal-tower (2).png";
       iconImage.height = 30;
@@ -192,7 +193,6 @@
       selected: false
     })
   }
-
   
   function handleDistrictSelection() {
     map.data.revertStyle();
@@ -229,7 +229,6 @@
     })
     map.data.revertStyle();
   }
-
 </script>
 
 <div class="block w-full overflow-x-auto">
