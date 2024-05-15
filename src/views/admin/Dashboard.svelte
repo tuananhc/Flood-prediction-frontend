@@ -5,7 +5,7 @@
   import FooterAdmin from "components/Footers/FooterAdmin.svelte";
 
   // main map component placeholder
-  import MapExample from "components/Maps/Map.svelte";
+  import Map from "components/Maps/Map.svelte";
  
   // card components
   import CardTable from "components/Cards/CardTable.svelte";
@@ -30,7 +30,7 @@
               Hong Kong City
             </h2>
           </div>
-          <MapExample />
+          <Map />
         </div>
       </div>
       <!--
