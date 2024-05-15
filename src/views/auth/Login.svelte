@@ -43,6 +43,17 @@
     //submit user details to server
     userLogin(details).then((res) => {
       console.log(res);
+      //get token from local storage
+      const token = localStorage.getItem("token");
+      //redirect to dashboard
+      if (
+        token !== null &&
+        token !== undefined &&
+        token !== "undefined" &&
+        token !== ""
+      ) {
+        window.location.href = "/";
+      }
     });
   };
 </script>
