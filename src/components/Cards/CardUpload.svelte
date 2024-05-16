@@ -59,7 +59,7 @@
   </div>
   <div class="block w-full overflow-x-auto">
     <!--Districts table -->
-    <form class="max-w-xs mx-auto px-9" id="formUpload" name="formUpload">
+    <div class="max-w-xs mx-auto px-9" id="formUpload" name="formUpload">
       <!-- <div class="mb-5">
         <label
           for="Dataset"
@@ -158,9 +158,9 @@
         -->
       <div id="errorArea"></div>
       <button
-        type="submit"
+        type="button"
         class="bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        on:submit={uploadFile}>Submit</button
+        on:click={uploadFile}>Submit</button
       >
       <p>
         Once you have finished uploading data, click the below button to train
@@ -173,6 +173,6 @@
         style="margin-left: 10px;"
         >Launch A.I Training Cycle
       </button>
-    </form>
+    </div>
   </div>
 </div>
