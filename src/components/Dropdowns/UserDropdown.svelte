@@ -61,11 +61,11 @@
       View Profile
     </a>
     <div class="h-0 my-2 border border-solid border-blueGray-100" />
-    <a
-      class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+    <button
+      class="text-left text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
       on:click={logout}
     >
       Log Out
-    </a>
+    </button>
   </div>
 </div>
