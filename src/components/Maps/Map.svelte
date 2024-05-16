@@ -5,6 +5,7 @@
   import weatherStationAll from "./location.json";
   import Dropdown from "./Dropdown.svelte";
   import DateDropdown from "components/Dropdowns/DateDropdown.svelte";
+  import { text } from "svelte/internal";
 
   console.log(weatherStationAll)
 
@@ -75,7 +76,7 @@
 
   // init google maps
   let map;
-  const infoWindow = new google.maps.InfoWindow();
+  const infoWindow = new google.maps.InfoWindow({maxWidth: 350});
 
   onMount(async () => {
     const { Map } = await google.maps.importLibrary("maps");
@@ -161,6 +162,44 @@
       }
       handleDistrictSelection();
     });
+
+    const legend = document.getElementById("legend");
+
+    const icons = {
+      district: {
+        name: "Highlighted district",
+        icon: "/assets/mapIcons/district.png",
+      },
+      weatherStation: {
+        name: "Weather Station",
+        icon: "/assets/mapIcons/blue-circle.png",
+      },
+    };
+    
+    for (const key in icons) {
+      const type = icons[key];
+      const name = type.name;
+      const icon = type.icon;
+      const div = document.createElement("div");
+      const imageDiv = document.createElement("div");
+      const textDiv = document.createElement("div");
+      imageDiv.style.display = "flex"
+      imageDiv.style.flex = 1
+      imageDiv.style.justifyContent = "center"
+      textDiv.style.display = "flex"
+      textDiv.style.flex = 1
+      imageDiv.style.justifyContent = "center"
+
+      imageDiv.innerHTML = '<img src="' + icon + '" style=\"max-width: 50px; max-height: 30px; opacity: 0.8\""> ';
+      textDiv.innerHTML = name;
+      div.style.display = "flex";
+      div.appendChild(imageDiv);
+      div.appendChild(textDiv);
+      
+      legend.appendChild(div);
+    }
+
+    map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
   });
 
   function handleDistrictSelection() {
@@ -232,46 +271,50 @@
         strokeOpacity: 0.8,
         strokeWeight: 2,
         fillColor: color,
-        fillOpacity: 0.1,
+        fillOpacity: 0.5,
         map,
         center: myLatlng,
-        radius: 500,
+        radius: 750,
+        zIndex: 99999999,
+        title: station.title
       });
 
-      const iconImage = document.createElement("img");
-      iconImage.src = "/assets/mapIcons/signal-tower (2).png";
-      iconImage.height = 30;
-      iconImage.width = 30;
+      // const iconImage = document.createElement("img");
+      // iconImage.src = "/assets/mapIcons/signal-tower (2).png";
+      // iconImage.height = 30;
+      // iconImage.width = 30;
 
-      const newMarker = new google.maps.marker.AdvancedMarkerElement({
-        map,
-        position: new google.maps.LatLng(station["latitude"], station["longitude"]),
-        content: iconImage,
-        title: station.title
-      })
+      // const newMarker = new google.maps.marker.AdvancedMarkerElement({
+      //   map,
+      //   position: new google.maps.LatLng(station["latitude"], station["longitude"]),
+      //   content: iconImage,
+      //   title: station.title
+      // })
 
-      newMarker.addListener("click", ({ domEvent, latLng }) => {
+      circle.addListener("click", ({ domEvent, latLng }) => {
         const { target } = domEvent;
 
-        var title = (newMarker.title != "") ? newMarker.title : "Weather station";
+        var title = (circle.title != "") ? circle.title : "Weather station";
 
         const infoWindowContent = `
           <div>
-            <h2>${title}</h2>
-            <div style="display: inline; background-color: red">
+            <strong>${title}</strong><br>
+            <div style="display: inline; color: red; margin: 10">
               High chances of flood
             </div>
+            <p>70mm</p>
           </div>
         `
 
         infoWindow.close();
         infoWindow.setContent(infoWindowContent);
-        infoWindow.open(newMarker.map, newMarker);
+        infoWindow.setPosition(myLatlng);
+        infoWindow.open(map);
         infoWindow.focus();
       });
 
       circleOverlays.push(circle);
-      imageOverlays.push(newMarker);
+      // imageOverlays.push(newMarker);
     })
   }
 
@@ -327,7 +370,8 @@
 
   </div>
   <div
-    id="map-canvas"
-    style="width: 100%; height: 600px"
+  id="map-canvas"
+  style="width: 100%; height: 600px"
   ></div>
+  <div id="legend" style="font-family: Arial, sans-serif; background: #fff; padding: 10px; margin: 10px; border: 3px solid #000;"></div>
 </div>
