@@ -55,7 +55,7 @@
                   <br> Amber Warning
                 </div>
                 <p>
-                  Heavy rain exceeding 30 millimetres has been recorded in an hour, and is likely to continue.
+                  Heavy rain exceeding 80 millimetres has been recorded daily, and is likely to continue.
         
                 </p>
               </div>
@@ -70,7 +70,7 @@
                   <br> Red Warning
                 </div>
                 <p>
-                  50 millimetres of rainfall has fallen in an hour, and is likely to continue.
+                  150 millimetres of rainfall has fallen daily, and is likely to continue.
                 
                 </p>
               </div>
@@ -85,7 +85,7 @@
                   <br> Black Warning
                 </div>
                 <p>
-                  Very heavy rain exceeding 70 millimetres has fallen in an hour, and is likely to continue.
+                  Very heavy rain exceeding 250 millimetres has fallen daily, and is likely to continue.
                 </p>
               </div>
 
