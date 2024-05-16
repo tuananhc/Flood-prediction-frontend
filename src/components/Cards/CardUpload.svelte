@@ -16,6 +16,8 @@
   function handleFileChange(event) {
     file = event.target.files[0];
     console.log(file);
+    console.log("File" + file.name)
+
   }
 
   // function handleFormDataChange(event) {
@@ -26,8 +28,24 @@
     event.preventDefault();
     var formData = new FormData()
     formData.append("file", file)
-    console.log("File" + file)
     console.log(formData)
+    var fileRegex = /^60rf_\d{4}$/
+    document.getElementById("errorArea").innerHTML = "";
+
+    if (!file){
+      document.getElementById("errorArea").innerHTML = "Error: Please select a file.";
+      return;
+    }
+    if (file.type !== "text/csv"){
+      document.getElementById("errorArea").innerHTML = "Error: Please only upload csv files.";
+      return;
+    }
+    var fileStem = file.name.split(".")[0]
+    if (!fileRegex.test(fileStem)){
+      document.getElementById("errorArea").innerHTML = "Error: Filename must match format '60rf_year' ";
+      return;
+    }
+    
     upload_csv(formData).then(response => {
           console.log("Response: ", response)
           document.getElementById("errorArea").innerHTML = response.message;
