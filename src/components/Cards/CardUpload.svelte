@@ -1,12 +1,14 @@
 <script>
   import { start } from "@popperjs/core";
   import { upload_csv } from "../../api/data";
-  import { api } from "../../api/data";
+  import API from "../../api/api";
 
   // 
   var file;
   let startDate;
   let endDate;
+
+  let loading = false;
 
   // core components
   //To Do: Required for file upload, user info about whats going on
@@ -40,14 +42,19 @@
 
   function trainAI(){
     var action = "train"
+    loading = true
     console.log(startDate)
     console.log(endDate)
-    apiRequest("GET", "/data/start_train?start_date="+startDate+"&end_date="+endDate).then(response =>
+    API.get( "/data/start_train?start_date="+startDate+"&end_date="+endDate).then(response =>
       {
-        document.getElementById("errorArea").innerHTML = response.message;
+        loading = false;
+        console.log(response.message)
+        document.getElementById("errorArea2").innerHTML = response.message;
       }
-    )
-    // Input Date YYYY-MM-DD
+    ).catch(error => {
+      console.log(error);
+      document.getElementById("errorArea2").innerHTML = error.message;
+    })
   }
 
 
@@ -190,13 +197,27 @@
       <label for="endDate">Select a End Date:</label>
       <input type="date" id="endDate" bind:value={endDate}>
       <br>
+      {#if !loading}
       <button
         type="button"
         class="bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         on:click={trainAI}
         style="margin-left: 10px;"
+        disabled={loading}
         >Launch A.I Training Cycle
       </button>
+      {:else}
+      <button
+      type="button"
+      class="bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      style="margin-left: 10px;"
+      on:click={trainAI}
+      disabled={loading}
+      >Loading...
+    </button>
+      {/if}
+      <div id="errorArea2"></div>
+
     </div>
   </div>
 </div>
