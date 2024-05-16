@@ -23,9 +23,10 @@
     console.log(formData)
     upload_csv(formData).then(response => {
           console.log("Response: ", response)
-          document.getElementById("errorArea").innerHTML = response.data.message;
-          console.log(response.data.message);
+          document.getElementById("errorArea").innerHTML = response.message;
+          console.log(response.message);
     }).catch(error => {
+      console.log("asdlkjh")
       console.log(error)
     })
 

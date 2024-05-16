@@ -13,9 +13,9 @@ export const upload_csv = async (file) => {
 
             }
         })
-        return res;
+        return await Promise.resolve(res.data);
     } catch (error) {
         console.log('error', error);
-        return error;
+        return await Promise.reject(error.response.data);
     }
 }
