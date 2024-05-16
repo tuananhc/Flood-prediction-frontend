@@ -149,26 +149,6 @@
                   University of Computer Science
                 </div> -->
               </div>
-              <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
-                <div class="flex flex-wrap justify-center">
-                  <div class="w-full lg:w-9/12 px-4">
-                    <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-                      An artist of considerable range, Jenna the name taken by
-                      Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                      performs and records all of his own music, giving it a
-                      warm, intimate feel with a solid groove structure. An
-                      artist of considerable range.
-                    </p>
-                    <a
-                      href="#pablo"
-                      on:click={(e) => e.preventDefault()}
-                      class="font-normal text-red-500"
-                    >
-                      Show more
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
