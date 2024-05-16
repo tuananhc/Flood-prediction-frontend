@@ -34,8 +34,9 @@
     "axios": "^1.6.8",
     "chart.js": "2.9.4",
     "date-picker-svelte": "^2.12.0",
-    "papaparse": "^5.4.1",
     "dotenv": "^16.4.5",
+    "moment": "^2.30.1",
+    "papaparse": "^5.4.1",
     "rainbowvis.js": "^1.1.1",
     "sirv-cli": "1.0.11",
     "svelte-routing": "1.5.0"
