@@ -25,7 +25,7 @@ const apiRequest = async (method, url, request) => {
         });
         return await Promise.resolve(res.data);
     } catch (err) {
-        return await Promise.reject(err);
+        return await Promise.reject(err.response.data);
     }
 };
 
