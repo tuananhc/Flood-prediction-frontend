@@ -181,12 +181,14 @@
 
       map.data.addGeoJson(district);
       map.data.setStyle(function (feature) {
+        
         return {
           fillColor: "#FFC100", //"#" + myRainbow.colorAt(Math.floor(Math.random() * 100)),
           strokeWeight: 0.5,
           fillOpacity: 0,
         };
       });
+      handleDistrictSelection();
     });
 
     for (var i = 0; i < DISTRICTS.length; i++) {
@@ -210,6 +212,8 @@
       }
       handleDistrictSelection();
     });
+
+
 
     const legend = document.getElementById("legend");
 
