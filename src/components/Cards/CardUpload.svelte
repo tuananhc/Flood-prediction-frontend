@@ -1,7 +1,12 @@
 <script>
+  import { start } from "@popperjs/core";
   import { upload_csv } from "../../api/data";
+  import { api } from "../../api/data";
+
   // 
   var file;
+  let startDate;
+  let endDate;
 
   // core components
   //To Do: Required for file upload, user info about whats going on
@@ -28,17 +33,24 @@
     }).catch(error => {
       console.log(error)
       document.getElementById("errorArea").innerHTML = error.message;
+
     })
 
   }
 
-  function trainAI(event){
-    
+  function trainAI(){
+    var action = "train"
+    console.log(startDate)
+    console.log(endDate)
+    apiRequest("GET", "/data/start_train?start_date="+startDate+"&end_date="+endDate).then(response =>
+      {
+        document.getElementById("errorArea").innerHTML = response.message;
+      }
+    )
+    // Input Date YYYY-MM-DD
   }
 
-  function handleAIButtonClick(event){
-    x
-  }
+
   // can be one of light or dark
   export let color = "light";
 </script>
@@ -167,10 +179,17 @@
         class="bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         on:click={uploadFile}>Submit</button
       >
+      
+
       <p>
         Once you have finished uploading data, click the below button to train
         the A.I Model
       </p>
+      <label for="startDate">Select a Start Date:</label>
+      <input type="date" id="startDate" bind:value={startDate}>
+      <label for="endDate">Select a End Date:</label>
+      <input type="date" id="endDate" bind:value={endDate}>
+      <br>
       <button
         type="button"
         class="bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
