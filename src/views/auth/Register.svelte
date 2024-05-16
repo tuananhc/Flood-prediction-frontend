@@ -1,6 +1,13 @@
 <script>
   import DistrictDropdown from "components/Dropdowns/DistrictDropdown.svelte";
   import { createUser } from "../../api/user";
+  const DISTRICTS = [
+    'Eastern District', 'Tsuen Wan District', 'Tuen Mun District', 'Kowloon City District',
+    'Yuen Long District', 'Sha Tin District', 'Kwai Tsing District', 'Tai Po District',
+    'Sham Shui Po District', 'Islands District', 'Southern District', 'North District',
+    'Kwun Tong District', 'Wong Tai Sin District', 'Central and Western District',
+    'Sai Kung District', 'Wan Chai District', 'Yau Tsim Mong District'
+  ]
 
   let details = {
     display_name: "",
@@ -159,7 +166,17 @@
               >
                 District
               </label>
-              <DistrictDropdown />
+              <!-- <DistrictDropdown /> -->
+              <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+                <input type="checkbox" value="district 1" id="district1" name="district1">
+                <label for="district1">District 1</label>
+                <input type="checkbox" value="district 2" id="district2" name="district2">
+                <label for="district2">District 2</label>
+                <input type="checkbox" value="district 3" id="district3" name="district3">
+                <label for="district3">District 3</label>
+                <input type="checkbox" value="district 4" id="district4" name="district4">
+                <label for="district4">District 4</label>
+              </div>
               <div class="error">{errors.districts}</div>
             </div>
 
