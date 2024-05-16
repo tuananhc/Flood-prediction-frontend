@@ -1,4 +1,5 @@
 <script>
+  import {upload_csv} from "../../api/data"
   let file;
   let formTest = new FormData()
   // core components
@@ -21,11 +22,11 @@
 
     try {
       console.log("Trying upload...")
-      const response = await fetch("/upload_csv", {
-        method: "POST",
-        body: form,
-      });
-
+      // const response = await fetch("/upload_csv", {
+      //   method: "POST",
+      //   body: form,
+      // });
+        const response = await upload_csv(form)
       if (response.ok) {
         console.log("File uploaded successfully");
         document.getElementById("errorArea").innerHTML = await response.text()

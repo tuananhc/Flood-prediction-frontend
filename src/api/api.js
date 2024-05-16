@@ -8,7 +8,7 @@ const axiosAPI = axios.create({
 });
 
 // implement a method to execute all the request from here.
-const apiRequest = (method, url, request) => {
+const apiRequest = async (method, url, request) => {
     const headers = {
         "content-type": "application/json; charset=utf-8",
         "token": localStorage.getItem("token")
@@ -16,17 +16,17 @@ const apiRequest = (method, url, request) => {
         // Authorization: `Bearer ${localStorage.getItem("token")}`
     };
     //using the axios instance to perform the request that received from each http method
-    return axiosAPI({
-        method,
-        url,
-        data: request,
-        headers
-    }).then(res => {
-        return Promise.resolve(res.data);
-    })
-        .catch(err => {
-            return Promise.reject(err);
+    try {
+        const res = await axiosAPI({
+            method,
+            url,
+            data: request,
+            headers
         });
+        return await Promise.resolve(res.data);
+    } catch (err) {
+        return await Promise.reject(err);
+    }
 };
 
 // function to execute the http get request
