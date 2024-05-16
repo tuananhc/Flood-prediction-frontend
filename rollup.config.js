@@ -71,7 +71,7 @@ const indexTemplate = `<!--
   <body class="text-blueGray-700 antialiased">
     <noscript>
       <strong
-        >We're sorry but notus-svelte doesn't work properly without
+        >We're sorry but our website doesn't work properly without
         JavaScript enabled. Please enable it to continue.</strong
       >
     </noscript>
@@ -80,35 +80,35 @@ const indexTemplate = `<!--
 </html>
 `;
 
-if (production) {
+// if (production) {
+//   fs.writeFileSync(
+//     "./public/index.html",
+//     indexTemplate
+//       .replace("<<process-env-status>>", "PRODUCTION: true")
+//       .replace(/<<live-preview-link>>/g, "/notus-svelte")
+//   );
+//   fs.writeFileSync(
+//     "./public/200.html",
+//     indexTemplate
+//       .replace("<<process-env-status>>", "PRODUCTION: true")
+//       .replace(/<<live-preview-link>>/g, "/notus-svelte")
+//   );
+//   fs.writeFileSync(
+//     "./public/404.html",
+//     indexTemplate
+//       .replace("<<process-env-status>>", "PRODUCTION: true")
+//       .replace(/<<live-preview-link>>/g, "/notus-svelte")
+//   );
+// } else {
   fs.writeFileSync(
     "./public/index.html",
     indexTemplate
-      .replace("<<process-env-status>>", "PRODUCTION: true")
-      .replace(/<<live-preview-link>>/g, "/notus-svelte")
+      .replace("<<process-env-status>>", "")
+      .replace(/<<live-preview-link>>/g, "")
   );
   fs.writeFileSync(
     "./public/200.html",
     indexTemplate
-      .replace("<<process-env-status>>", "PRODUCTION: true")
-      .replace(/<<live-preview-link>>/g, "/notus-svelte")
-  );
-  fs.writeFileSync(
-    "./public/404.html",
-    indexTemplate
-      .replace("<<process-env-status>>", "PRODUCTION: true")
-      .replace(/<<live-preview-link>>/g, "/notus-svelte")
-  );
-} else {
-  fs.writeFileSync(
-    "./public/index.html",
-    indexTemplate
-      .replace("<<process-env-status>>", "")
-      .replace(/<<live-preview-link>>/g, "")
-  );
-  fs.writeFileSync(
-    "./public/200.html",
-    indexTemplate
       .replace("<<process-env-status>>", "")
       .replace(/<<live-preview-link>>/g, "")
   );
@@ -118,7 +118,7 @@ if (production) {
       .replace("<<process-env-status>>", "")
       .replace(/<<live-preview-link>>/g, "")
   );
-}
+// }
 
 function serve() {
   let server;

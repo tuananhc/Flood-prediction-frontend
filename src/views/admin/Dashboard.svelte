@@ -9,7 +9,7 @@
  
   // card components
   import CardTable from "components/Cards/CardTable.svelte";
-  import CardPredict from "components/Cards/CardPredict.svelte";
+  //import CardPredict from "components/Cards/CardPredict.svelte";
 </script>
 
 <div class="relative md:ml-64 bg-blueGray-100">
