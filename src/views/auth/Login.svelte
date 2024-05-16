@@ -52,7 +52,7 @@
         token !== "undefined" &&
         token !== ""
       ) {
-        window.location.href = "/";
+        window.location.href = "/admin/dashboard";
       }
     });
   };

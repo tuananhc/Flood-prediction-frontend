@@ -1,14 +1,27 @@
 <script>
   import DistrictDropdown from "components/Dropdowns/DistrictDropdown.svelte";
   import { createUser } from "../../api/user";
-  const DISTRICTS = [
-    'Eastern District', 'Tsuen Wan District', 'Tuen Mun District', 'Kowloon City District',
-    'Yuen Long District', 'Sha Tin District', 'Kwai Tsing District', 'Tai Po District',
-    'Sham Shui Po District', 'Islands District', 'Southern District', 'North District',
-    'Kwun Tong District', 'Wong Tai Sin District', 'Central and Western District',
-    'Sai Kung District', 'Wan Chai District', 'Yau Tsim Mong District'
-  ]
 
+  let DISTRICTS = [
+    "Eastern District",
+    "Tsuen Wan District",
+    "Tuen Mun District",
+    "Kowloon City District",
+    "Yuen Long District",
+    "Sha Tin District",
+    "Kwai Tsing District",
+    "Tai Po District",
+    "Sham Shui Po District",
+    "Islands District",
+    "Southern District",
+    "North District",
+    "Kwun Tong District",
+    "Wong Tai Sin District",
+    "Central and Western District",
+    "Sai Kung District",
+    "Wan Chai District",
+    "Yau Tsim Mong District",
+  ];
   let details = {
     display_name: "",
     email: "",
@@ -25,6 +38,17 @@
   };
   let valid = false;
 
+  //create funtion check DISTRICTS array when click and unclick checkbox remove the value accordingly
+  function checkHandler(data) {
+    //push data in details.district array
+    if (details.districts.includes(data)) {
+      details.districts = details.districts.filter((item) => item !== data);
+    } else {
+      details.districts.push(data);
+    }
+    console.log(details.districts);
+  }
+
   const submitHandler = () => {
     valid = true;
     //validate display name
@@ -38,7 +62,7 @@
     if (details.email === "") {
       errors.email = "Email is required";
       valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
+    } else if (!/\S+@\S+\.\S+/.test(details.email)) {
       errors.email = "Email is invalid";
       valid = false;
     } else {
@@ -55,7 +79,7 @@
     if (details.confirm_password === "") {
       errors.confirm_password = "Confirm Password is required";
       valid = false;
-    } else if (confirm_password !== password) {
+    } else if (details.confirm_password !== details.password) {
       errors.confirm_password = "Passwords do not match";
       valid = false;
     } else {
@@ -74,6 +98,7 @@
     //submit user details to server
     createUser(details).then((res) => {
       console.log(res);
+      window.location.href = "/auth/login";
     });
   };
 
@@ -168,14 +193,24 @@
               </label>
               <!-- <DistrictDropdown /> -->
               <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-                <input type="checkbox" value="district 1" id="district1" name="district1">
-                <label for="district1">District 1</label>
-                <input type="checkbox" value="district 2" id="district2" name="district2">
+                {#each DISTRICTS as data, index}
+                  <input
+                    type="checkbox"
+                    value={data}
+                    id={index}
+                    name="district1"
+                    on:click={() => {
+                      checkHandler(data);
+                    }}
+                  />
+                  <label for="district1">{data}</label>
+                  <!-- <input type="checkbox" value="district 2" id="district2" name="district2">
                 <label for="district2">District 2</label>
                 <input type="checkbox" value="district 3" id="district3" name="district3">
                 <label for="district3">District 3</label>
                 <input type="checkbox" value="district 4" id="district4" name="district4">
-                <label for="district4">District 4</label>
+                <label for="district4">District 4</label> -->
+                {/each}
               </div>
               <div class="error">{errors.districts}</div>
             </div>
