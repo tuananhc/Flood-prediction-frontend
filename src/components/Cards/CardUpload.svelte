@@ -26,8 +26,8 @@
           document.getElementById("errorArea").innerHTML = response.message;
           console.log(response.message);
     }).catch(error => {
-      console.log("asdlkjh")
       console.log(error)
+      document.getElementById("errorArea").innerHTML = error.message;
     })
 
   }
