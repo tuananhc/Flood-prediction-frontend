@@ -15,20 +15,24 @@
   //   console.log(event.target.name, event.target.value);
   //   formTest.set(event.target.name, event.target.value);
   // }
-  async function uploadFile(event) {
+  function uploadFile(event) {
     event.preventDefault();
     var formData = new FormData()
     formData.append("file", file)
     console.log("File" + file)
-    const response = await upload_csv(formData);
-    console.log("Test Response:")
-    console.log(response)
-    document.getElementById("errorArea").innerHTML = response.text();
-    console.log( response.text());
+    console.log(formData)
+    upload_csv(formData).then(response => {
+          console.log("Response: ", response)
+          document.getElementById("errorArea").innerHTML = response.data.message;
+          console.log(response.data.message);
+    }).catch(error => {
+      console.log(error)
+    })
+
   }
 
-  async function trainAI(event){
-    let x = 0
+  function trainAI(event){
+    
   }
 
   function handleAIButtonClick(event){
