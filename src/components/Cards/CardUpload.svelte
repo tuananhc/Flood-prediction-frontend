@@ -1,44 +1,38 @@
 <script>
-  import {upload_csv} from "../../api/data"
-  let file;
-  let formTest = new FormData()
+  import { upload_csv } from "../../api/data";
+  // 
+  var file;
+
   // core components
   //To Do: Required for file upload, user info about whats going on
   // Append rest of form data
-  console.log("Test")
   function handleFileChange(event) {
     file = event.target.files[0];
     console.log(file);
   }
 
-  function handleFormDataChange(event){
-    console.log(event.target.name, event.target.value);
-    formTest.set(event.target.name, event.target.value);
-  }
+  // function handleFormDataChange(event) {
+  //   console.log(event.target.name, event.target.value);
+  //   formTest.set(event.target.name, event.target.value);
+  // }
   async function uploadFile(event) {
-    console.log("Testing append...")
     event.preventDefault();
-    formTest.append("file", file);
+    var formData = new FormData()
+    formData.append("file", file)
+    console.log("File" + file)
+    const response = await upload_csv(formData);
+    console.log("Test Response:")
+    console.log(response)
+    document.getElementById("errorArea").innerHTML = response.text();
+    console.log( response.text());
+  }
 
-    try {
-      console.log("Trying upload...")
-      // const response = await fetch("/upload_csv", {
-      //   method: "POST",
-      //   body: form,
-      // });
-        const response = await upload_csv(form)
-      if (response.ok) {
-        console.log("File uploaded successfully");
-        document.getElementById("errorArea").innerHTML = await response.text()
-      } else {
-        console.log("Failed to upload file.");
-        document.getElementById("errorArea").innerHTML = await response.text()
-      }
-    } catch (error) {
-      console.log("Error uploading file." + error);
-    }
+  async function trainAI(event){
+    let x = 0
+  }
 
-    console.log("Testing: File Upload...");
+  function handleAIButtonClick(event){
+    x
   }
   // can be one of light or dark
   export let color = "light";
@@ -65,8 +59,8 @@
   </div>
   <div class="block w-full overflow-x-auto">
     <!--Districts table -->
-    <form class="max-w-xs mx-auto px-9" id='formUpload' name="formUpload">
-      <div class="mb-5">
+    <form class="max-w-xs mx-auto px-9" id="formUpload" name="formUpload">
+      <!-- <div class="mb-5">
         <label
           for="Dataset"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -98,7 +92,6 @@
           required
         />
       </div>
-      <!-- change for, type and id!-->
       <div class="mb-5">
         <label
           for="dataCategory"
@@ -130,7 +123,7 @@
           on:input={handleFormDataChange}
           required
         />
-      </div>
+      </div> -->
       <input
         type="file"
         id="fileInput"
@@ -154,13 +147,32 @@
           <p>Please select your file to upload.</p>
         </div>
       {/if}
+      <!-- 
+          <p>Would you like to initiate a training cycle with the new data?</p>
+          <input type="radio" id="train_no" bind:group={trainingSelection} on:input={handleFormDataChange} name="train_selection" value="train_no" class="display: inline-block; margin-right: 10px;" required>
+          <label for="train_no">No</label>
+          <input type="radio" id="train_yes" bind:group={trainingSelection} on:input={handleFormDataChange} name="train_selection" value="train_yes" class="display: inline-block; margin-right: 10px;"required >
+          <label for="train_yes">Yes</label><br>
+        <div id="errorArea"></div>
+        <br>
+        -->
       <div id="errorArea"></div>
       <button
         type="submit"
         class="bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        on:submit={uploadFile}
-        >Submit</button
+        on:submit={uploadFile}>Submit</button
       >
+      <p>
+        Once you have finished uploading data, click the below button to train
+        the A.I Model
+      </p>
+      <button
+        type="button"
+        class="bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        on:click={trainAI}
+        style="margin-left: 10px;"
+        >Launch A.I Training Cycle
+      </button>
     </form>
   </div>
 </div>
