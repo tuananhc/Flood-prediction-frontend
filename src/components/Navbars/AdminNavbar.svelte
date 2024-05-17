@@ -1,6 +1,19 @@
 <script>
   // core components
   import UserDropdown from "components/Dropdowns/UserDropdown.svelte";
+  import { onMount } from "svelte";
+
+  // core components
+  let isLoggedIn = false;
+  onMount(() => {
+    // this is for the dropdown to be working
+    let userInfo = localStorage.getItem("token");
+    if (userInfo) {
+      isLoggedIn = true;
+
+      console.log("iislogin", isLoggedIn);
+    }
+  });
 </script>
 
 <!-- Navbar -->
@@ -13,13 +26,16 @@
     <!-- Brand -->
     <a
       class="reddit text-white text-sm uppercase hidden lg:inline-block font-semibold"
-      href="#pablo" on:click={(e) => e.preventDefault()}
+      href="#pablo"
+      on:click={(e) => e.preventDefault()}
     >
       Flood Prediction Dashboard 洪水预报
     </a>
     <!-- User -->
     <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
-      <UserDropdown />
+      {#if isLoggedIn}
+        <UserDropdown />
+      {/if}
     </ul>
   </div>
 </nav>

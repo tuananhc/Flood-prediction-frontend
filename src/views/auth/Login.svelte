@@ -42,18 +42,14 @@
     }
     //submit user details to server
     userLogin(details).then((res) => {
-      console.log(res);
+      //save token to local storage
+      localStorage.setItem("token", res);
+
       //get token from local storage
-      const token = localStorage.getItem("token");
+
       //redirect to dashboard
-      if (
-        token !== null &&
-        token !== undefined &&
-        token !== "undefined" &&
-        token !== ""
-      ) {
-        window.location.href = "/admin/dashboard";
-      }
+
+      window.location.href = "/admin/dashboard";
     });
   };
 </script>

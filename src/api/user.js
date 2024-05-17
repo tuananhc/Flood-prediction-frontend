@@ -4,10 +4,8 @@ export const userLogin = async (data) => {
     try {
         console.log('data', data);
         const response = await api.post("/user/login", data);
-        //save token to local storage
-        localStorage.setItem('token', response.data);
-        console.log('res', response);
-        return response;
+
+        return response.data;
     } catch (error) {
         console.log('error', error);
         return error;

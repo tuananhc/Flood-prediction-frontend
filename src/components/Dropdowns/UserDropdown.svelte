@@ -2,8 +2,6 @@
   // library for creating dropdown menu appear on click
   import { createPopper } from "@popperjs/core";
 
-  // core components
-
   const team2 = "/assets/img/user.png";
 
   let dropdownPopoverShow = false;
@@ -25,6 +23,7 @@
 
   const logout = () => {
     localStorage.removeItem("token");
+    sessionStorage.removeItem("userInfo");
     window.location.href = "/auth/login";
   };
 </script>
