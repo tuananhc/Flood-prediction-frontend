@@ -416,7 +416,7 @@
 
 <div class="block w-full overflow-x-auto">
   <div class="flex w-full bg-transparent border-collapse">
-    <div class="flex">
+    <div class="ml-3 flex">
       <Dropdown
         districts={districtSelection}
         onChange={handleDistrictSelection}
