@@ -1,15 +1,32 @@
 <script>
   import { link } from "svelte-routing";
-
+  import { onMount } from "svelte";
+  import { getUser } from "../../api/user";
   // core components
   import NotificationDropdown from "components/Dropdowns/NotificationDropdown.svelte";
   import UserDropdown from "components/Dropdowns/UserDropdown.svelte";
 
   let collapseShow = "hidden";
-
+  let isAdmin = false;
   function toggleCollapseShow(classes) {
     collapseShow = classes;
   }
+  onMount(async () => {
+    let token = localStorage.getItem("token");
+    if (token) {
+      let userInfoString = sessionStorage.getItem("userInfo");
+      let userInfo;
+      if (userInfoString == null) {
+        const res = await getUser();
+        userInfo = res.data;
+        sessionStorage.setItem("userInfo", JSON.stringify(userInfo));
+        isAdmin = userInfo.is_admin;
+      } else {
+        userInfo = JSON.parse(userInfoString);
+        isAdmin = userInfo.is_admin;
+      }
+    }
+  });
 
   export let location;
 </script>
@@ -24,7 +41,7 @@
     <button
       class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
       type="button"
-      on:click={() => toggleCollapseShow('bg-white m-2 py-3 px-6')}
+      on:click={() => toggleCollapseShow("bg-white m-2 py-3 px-6")}
     >
       <i class="fas fa-bars"></i>
     </button>
@@ -67,7 +84,7 @@
             <button
               type="button"
               class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
-              on:click={() => toggleCollapseShow('hidden')}
+              on:click={() => toggleCollapseShow("hidden")}
             >
               <i class="fas fa-times"></i>
             </button>
@@ -101,23 +118,39 @@
           <a
             use:link
             href="/admin/dashboard"
-            class="text-xs uppercase py-3 font-bold block {location.href.indexOf('/admin/dashboard') !== -1 ? 'text-violet-800 hover:text-violet-600':'text-blueGray-700 hover:text-blueGray-500'}"
+            class="text-xs uppercase py-3 font-bold block {location.href.indexOf(
+              '/admin/dashboard',
+            ) !== -1
+              ? 'text-violet-800 hover:text-violet-600'
+              : 'text-blueGray-700 hover:text-blueGray-500'}"
           >
             <i
-              class="fas fa-map-marked mr-2 text-sm {location.href.indexOf('/admin/dashboard') !== -1 ? 'opacity-75' : 'text-blueGray-300'}"
+              class="fas fa-map-marked mr-2 text-sm {location.href.indexOf(
+                '/admin/dashboard',
+              ) !== -1
+                ? 'opacity-75'
+                : 'text-blueGray-300'}"
             ></i>
             Forecast
           </a>
         </li>
-      
+
         <li class="items-center">
           <a
             use:link
             href="/admin/maps"
-            class="text-xs uppercase py-3 font-bold block {location.href.indexOf('/admin/maps') !== -1 ? 'text-violet-800 hover:text-violet-600':'text-blueGray-700 hover:text-blueGray-500'}"
+            class="text-xs uppercase py-3 font-bold block {location.href.indexOf(
+              '/admin/maps',
+            ) !== -1
+              ? 'text-violet-800 hover:text-violet-600'
+              : 'text-blueGray-700 hover:text-blueGray-500'}"
           >
             <i
-              class="fas fa-umbrella mr-2 text-sm {location.href.indexOf('/admin/maps') !== -1 ? 'opacity-75' : 'text-blueGray-300'}"
+              class="fas fa-umbrella mr-2 text-sm {location.href.indexOf(
+                '/admin/maps',
+              ) !== -1
+                ? 'opacity-75'
+                : 'text-blueGray-300'}"
             ></i>
             Past Weather
           </a>
@@ -127,29 +160,44 @@
           <a
             use:link
             href="/admin/emergency"
-            class="text-xs uppercase py-3 font-bold block {location.href.indexOf('/admin/emergency') !== -1 ? 'text-violet-800 hover:text-violet-600':'text-blueGray-700 hover:text-blueGray-500'}"
+            class="text-xs uppercase py-3 font-bold block {location.href.indexOf(
+              '/admin/emergency',
+            ) !== -1
+              ? 'text-violet-800 hover:text-violet-600'
+              : 'text-blueGray-700 hover:text-blueGray-500'}"
           >
             <i
-              class="fas fa-ambulance mr-2 text-sm {location.href.indexOf('/admin/emergency') !== -1 ? 'opacity-75' : 'text-blueGray-300'}"
+              class="fas fa-ambulance mr-2 text-sm {location.href.indexOf(
+                '/admin/emergency',
+              ) !== -1
+                ? 'opacity-75'
+                : 'text-blueGray-300'}"
             ></i>
             Emergency Info
           </a>
         </li>
-
-        <li class="items-center">
-          <a
-            use:link
-            href="/admin/tables"
-            class="text-xs uppercase py-3 font-bold block {location.href.indexOf('/admin/tables') !== -1 ? 'text-violet-800 hover:text-violet-600':'text-blueGray-700 hover:text-blueGray-500'}"
-          >
-            <i
-              class="fas fa-table mr-2 text-sm {location.href.indexOf('/admin/tables') !== -1 ? 'opacity-75' : 'text-blueGray-300'}"
-            ></i>
-            Analytics
-          </a>
-        </li>
-
-        
+        {#if isAdmin}
+          <li class="items-center">
+            <a
+              use:link
+              href="/admin/tables"
+              class="text-xs uppercase py-3 font-bold block {location.href.indexOf(
+                '/admin/tables',
+              ) !== -1
+                ? 'text-violet-800 hover:text-violet-600'
+                : 'text-blueGray-700 hover:text-blueGray-500'}"
+            >
+              <i
+                class="fas fa-table mr-2 text-sm {location.href.indexOf(
+                  '/admin/tables',
+                ) !== -1
+                  ? 'opacity-75'
+                  : 'text-blueGray-300'}"
+              ></i>
+              Analytics
+            </a>
+          </li>
+        {/if}
       </ul>
 
       <!-- Divider -->
@@ -194,7 +242,6 @@
 
       <!-- Navigation -->
 
-      
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
         <!-- About 
         <li class="items-center">
@@ -209,7 +256,7 @@
         </li>
         -->
 
-        <li class="items-center">
+        <!-- <li class="items-center">
           <a
             use:link
             href="/admin/settings"
@@ -220,8 +267,8 @@
             ></i>
             Settings
           </a>
-        </li>
-    
+        </li> -->
+      </ul>
     </div>
   </div>
 </nav>

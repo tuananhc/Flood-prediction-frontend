@@ -6,15 +6,18 @@
   import { onMount } from "svelte";
 
   const team2 = "/assets/img/user.png";
-  export let location;
+  
 
-  let user;
+  let user = JSON.parse(sessionStorage.getItem("userInfo"))
   //wait for get user data first
   onMount(async () => {
-    const res = await getUser();
-    console.log("res", res.data);
-    user = res.data;
+    if(!user) {
+      const res = await getUser();
+      console.log("res", user);
+      user = res.data;
+    }
   });
+  
 </script>
 
 <div>
