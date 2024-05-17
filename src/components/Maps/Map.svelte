@@ -86,13 +86,6 @@
   ];
 
   var districtSelection = [];
-  for (var i = 0; i < DISTRICTS.length; i++) {
-    districtSelection.push({
-      name: DISTRICTS[i],
-      ename: DISTRICTS_ENAME[i],
-      selected: false,
-    });
-  }
 
   function loadJSONFile(filename, callback) {
     var xmlobj = new XMLHttpRequest();
@@ -112,6 +105,16 @@
   const infoWindow = new google.maps.InfoWindow({ maxWidth: 350 });
 
   onMount(async () => {
+    var districts = DISTRICTS;
+    let token = localStorage.getItem("token");
+    if (token) {
+      let userInfo = sessionStorage.getItem("userInfo");
+      if (userInfo) {
+        let user = JSON.parse(userInfo);
+        districts = user.districts;
+      }
+    }
+
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement, PinElement } =
       await google.maps.importLibrary("marker");
@@ -185,6 +188,19 @@
         };
       });
     });
+
+    for (var i = 0; i < DISTRICTS.length; i++) {
+      districtSelection.push({
+        name: DISTRICTS[i],
+        ename: DISTRICTS_ENAME[i],
+        selected: false,
+      });
+
+      if (districts.includes(districtSelection[i].name)) {
+        districtSelection[i].selected = true;
+      }
+      handleDistrictSelection();
+    }
 
     map.data.addListener("click", function (event) {
       for (var i = 0; i < districtSelection.length; i++) {
@@ -319,31 +335,30 @@
           let textColor = "#00FFFF";
           let severity = "Unlikely to flood";
 
-          if (value >= 80 && value < 150){
-            color = "#ffcc01"
-            textColor = color
-            severity = "Minor Severity"
-          } else if (value >= 150 && value < 250){
-            color = "#fe0101"
-            textColor = color
-            severity = "Medium Severity"
-          } else if (value >= 250){
-            color = "#000000"
-            textColor = "#fe0101"
-            severity = "High Severity"
+          if (value >= 80 && value < 150) {
+            color = "#ffcc01";
+            textColor = color;
+            severity = "Minor Severity";
+          } else if (value >= 150 && value < 250) {
+            color = "#fe0101";
+            textColor = color;
+            severity = "Medium Severity";
+          } else if (value >= 250) {
+            color = "#000000";
+            textColor = "#fe0101";
+            severity = "High Severity";
           }
 
           if (value >= 80) {
-              value = 15;
-          } else if (value >= 150){
+            value = 15;
+          } else if (value >= 150) {
             value = 18;
-          } else if (value >= 250){
+          } else if (value >= 250) {
             value = 22;
+          } else {
+            value = Math.round(1 + 14 * (1 - Math.exp(-value / 100)));
           }
-          else {
-              value = Math.round(1 + 14 * (1 - Math.exp(-value / 100)));
-          }
-          
+
           const circle = new google.maps.Circle({
             strokeColor: color,
             strokeOpacity: 0.8,
@@ -352,7 +367,7 @@
             fillOpacity: 0.5,
             map,
             center: myLatlng,
-            radius: 100*value,
+            radius: 100 * value,
             zIndex: 100,
             title: station.title,
           });
@@ -399,7 +414,7 @@
       map.data.overrideStyle(feature, { fillOpacity: 0.5 });
     });
 
-    handleDistrictSelection()
+    handleDistrictSelection();
   }
 
   function deselectAll() {
