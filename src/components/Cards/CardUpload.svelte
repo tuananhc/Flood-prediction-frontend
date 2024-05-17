@@ -188,7 +188,7 @@
      </div>
      <div class="flex-flow:column p-3 "> 
       {#if file}
-        <div>
+        <div class="pb-3">
           <p>{file.name}</p>
         </div>
       {:else}
