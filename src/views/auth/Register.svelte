@@ -192,18 +192,22 @@
                 District
               </label>
               <!-- <DistrictDropdown /> -->
-              <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+              <div class="flex-auto rounded pt-0 grid-2">
                 {#each DISTRICTS as data, index}
+                  <ul class="p-2  border border-gray-200 items-center w-full text-sm font-medium rounded text-gray-700 bg-white border border-gray-200  sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <li class="w-full">
                   <input
                     type="checkbox"
                     value={data}
                     id={index}
                     name="district1"
+                    class="rounded"
                     on:click={() => {
                       checkHandler(data);
                     }}
                   />
-                  <label for="district1">{data}</label>
+                  <label class="p-2 " for="district1">{data}</label>
+                  </li></ul>
                   <!-- <input type="checkbox" value="district 2" id="district2" name="district2">
                 <label for="district2">District 2</label>
                 <input type="checkbox" value="district 3" id="district3" name="district3">
