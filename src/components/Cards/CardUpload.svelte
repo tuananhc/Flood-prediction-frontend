@@ -87,10 +87,10 @@
     : 'bg-red-800 text-white'}"
 >
   <div class="rounded-t mb-0 px-4 py-3 border-0">
-    <div class="flex flex-wrap items-center">
+    <div class="flex flex-wrap items-center align-center ">
       <div class="relative w-full px-4 max-w-full flex-grow flex-1">
         <h3
-          class="font-semibold text-lg {color === 'light'
+          class="font-semibold text-lg  {color === 'light'
             ? 'text-blueGray-700'
             : 'text-white'}"
         >
@@ -100,8 +100,9 @@
     </div>
   </div>
   <div class="block w-full overflow-x-auto">
-    <!--Districts table -->
-    <div class="max-w-xs mx-auto px-9" id="formUpload" name="formUpload">
+    <!--Districts table --><div class="block w-full overflow-x-auto px-6">
+              
+    <div class="grid-2 max-w-xs mx-auto px-6" id="formUpload" name="formUpload">
       <!-- <div class="mb-5">
         <label
           for="Dataset"
@@ -166,6 +167,7 @@
           required
         />
       </div> -->
+      <div class="flex-flow:column items-center "> 
       <input
         type="file"
         id="fileInput"
@@ -174,19 +176,24 @@
         on:change={handleFileChange}
         required
       />
+      <div class="pt-3">
+        <p>Please select your file to upload.</p>
+      </div>
       <button
         type="button"
-        class="bg-blueGray-600 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-80 sm:w-auto mb-6 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="mt-3  border border-1 text-blueGray-600 bg-blueGray-100  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-80 sm:w-auto mb-6 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         on:click={() => document.getElementById("fileInput").click()}
         required>Upload File</button
       >
+     </div>
+     <div class="flex-flow:column p-3 "> 
       {#if file}
         <div>
           <p>{file.name}</p>
         </div>
       {:else}
-        <div>
-          <p>Please select your file to upload.</p>
+        <div class="pb-3">
+          <p>No file uploaded yet.</p>
         </div>
       {/if}
       <!-- 
@@ -201,12 +208,12 @@
       <div id="errorArea"></div>
       <button
         type="button"
-        class="bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="p-3 bg-blueGray-600 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         on:click={uploadFile}>Submit</button
       >
-      
-
-      <p>
+    </div>
+   </div>
+      <p class="pb-3">
         Once you have finished uploading data, click the below button to train
         the A.I Model
       </p>
@@ -216,26 +223,27 @@
       <input type="date" id="endDate" bind:value={endDate}>
       <br>
       {#if !loading}
+      <br>
       <button
         type="button"
-        class="bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class=" bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         on:click={trainAI}
-        style="margin-left: 10px;"
         disabled={loading}
-        >Launch A.I Training Cycle
+        >Launch A.I. Training Cycle
       </button>
       {:else}
       <button
       type="button"
       class="bg-violet-800 text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto mb-8 px-1 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-      style="margin-left: 10px;"
+
       on:click={trainAI}
       disabled={loading}
       >Loading...
     </button>
       {/if}
       <div id="errorArea2"></div>
-
     </div>
+ 
+
   </div>
 </div>

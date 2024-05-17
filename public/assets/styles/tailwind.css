@@ -1291,7 +1291,7 @@ select {
 }
 
 .mt-4 {
-  margin-top: 1rem;
+  marg: 1rem;
 }
 
 .mt-48 {
@@ -3267,6 +3267,10 @@ select {
   padding-bottom: 0.5rem;
 }
 
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .pb-20 {
   padding-bottom: 5rem;
 }
@@ -3343,6 +3347,9 @@ select {
   padding-top: 0.5rem;
 }
 
+.pt-3 {
+  padding-top: 0.75rem;
+}
 .pt-20 {
   padding-top: 5rem;
 }
