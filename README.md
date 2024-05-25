@@ -40,7 +40,8 @@ Complex missing data issues, live data scrapped​
 
 Some functionality has been limited to focus on the M.V.P​
 
-​
+RUNNING THE PROJECT
+Run the commands in the README.md file to install dependencies and run the code. 
 
  ​
 
